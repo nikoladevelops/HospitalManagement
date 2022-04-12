@@ -2,12 +2,12 @@
 {
     internal class Doctor
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // primary key
 
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public int UserId { get; set; } // foreign key
+        public User User { get; set; } // foreign key navigational property
 
-        public int DoctorSpecialityId { get; set; }
-        public DoctorSpeciality DoctorSpeciality { get; set; }
+        public int DoctorSpecialityId { get; set; } // foreign key
+        public DoctorSpeciality DoctorSpeciality { get; set; } // foreign key navigational property
     }
 }

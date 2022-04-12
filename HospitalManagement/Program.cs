@@ -1,4 +1,4 @@
-using HospitalManagement.Forms;
+﻿using HospitalManagement.Forms;
 using HospitalManagement.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,16 +6,18 @@ namespace HospitalManagement
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        // това е първият метод, който се изпълнява при стартиране на приложението
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            // създаваме нова инстанция на нашия custom db context клас
+            // при създаването на инстанция се изпълнява метода OnConfiguring(),
+            // който сме настроили
             var dbContext = new ApplicationDbContext();
+
+            // чрез .Migrate() казваме на Ef Core, ако не съществува такава база от данни
+            // да бъде създадена нова, като бъдат изпълнени всички миграции на приложението в папката Migrations
             dbContext.Database.Migrate();
             Application.Run(new LoginForm());
         }
