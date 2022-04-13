@@ -1,9 +1,9 @@
 ﻿namespace HospitalManagement.Models
 {
-    internal class Prescription
+    public class Prescription
     {
         public int Id { get; set; } // primary key
-        public string PrescriptionText { get; set; }
+        public string PrescriptionText { get; set; } // съдържа имена на лекарства/дозировка и т.н
         public string DateCreated { get; set; } // тук за жалост не можем да използваме типа данни DateTime, тъй като локалната база Sqlite няма такъв тип
 
         public int PatientId { get; set; } // foreign key

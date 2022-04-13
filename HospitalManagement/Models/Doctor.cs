@@ -3,7 +3,7 @@
 namespace HospitalManagement.Models
 {
     [Index(nameof(UserId), IsUnique = true)] // искаме one-to-one relationship само един User да съответства на само един Doctor, а не един User да може съответства на различни доктори 
-    internal class Doctor
+    public class Doctor
     {
         public int Id { get; set; } // primary key
         public string FirstName { get; set; }

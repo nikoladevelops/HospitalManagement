@@ -3,7 +3,7 @@
 namespace HospitalManagement.Models
 {
     [Index(nameof(Email), IsUnique = true)] // правим Index на имейла и задаваме да не може да има два еднакви имейла/всички да са различни
-    internal class User
+    public class User
     {
         public int Id { get; set; } // primary key
         public string Email { get; set; }
