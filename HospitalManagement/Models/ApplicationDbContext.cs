@@ -10,7 +10,6 @@ namespace HospitalManagement.Models
             // задаваме на Ef Core да използва Sqlite Provider (че имаме локална база от данни) и пишем името на файла
             optionsBuilder.UseSqlite("Filename=HospitalData.db");
 
-            // TODO add a migration InsertAllEntityModels
             // TODO implement MVVM pattern
             // TODO work on the login form functionality
         }

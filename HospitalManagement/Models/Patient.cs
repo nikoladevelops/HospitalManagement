@@ -1,5 +1,8 @@
-﻿namespace HospitalManagement.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace HospitalManagement.Models
 {
+    [Index(nameof(EGN), IsUnique = true)] // правим Index на EGN-то и задаваме да не може да има две еднакви EGN-та/всички да са различни
     internal class Patient
     {
         public int Id { get; set; } // primary key
