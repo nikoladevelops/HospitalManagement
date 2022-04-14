@@ -1,6 +1,5 @@
 ﻿using HospitalManagement.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
 
 namespace HospitalManagement.Forms
 {
@@ -106,7 +105,6 @@ namespace HospitalManagement.Forms
                 return false;
             }
 
-            // TODO implement searching for a doctor
             // TODO implement show selected doctor info
             // TODO implement edit selected doctor info
             // TODO implement delete selected doctor / warning of deleting all his prescriptions
@@ -308,5 +306,29 @@ namespace HospitalManagement.Forms
                 return;
             }
         }
+
+        private void showSelectedDoctorButton_Click(object sender, EventArgs e)
+        {
+            // open show doctor form
+        }
+
+        private void deleteSelectedDoctorButton_Click(object sender, EventArgs e)
+        {
+            // open delete doctor messagebox
+        }
+
+        private void editSelectedDoctorButton_Click(object sender, EventArgs e)
+        {
+            // open edit doctor form
+        }
+        private bool CheckIfDoctorSelected() 
+        {
+            if (foundDoctorsListBox.SelectedIndex==-1)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }
