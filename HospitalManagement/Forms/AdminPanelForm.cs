@@ -1,10 +1,12 @@
 ﻿using HospitalManagement.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagement.Forms
 {
     public partial class AdminPanelForm : Form
     {
         private ApplicationDbContext db;
+        private List<Control> createDoctorControls;
         public AdminPanelForm()
         {
             InitializeComponent();
@@ -15,13 +17,23 @@ namespace HospitalManagement.Forms
             LoadSpecialityListBoxData();
             displayEmailLabel.Text = "Влезли сте като: " + user.Email;
             PopulateSearchCriteriaListBox();
+            PopulateCreateDoctorControls();
             
+        }
+
+        private void PopulateCreateDoctorControls()
+        {
+            createDoctorControls = new List<Control>();
+            createDoctorControls.Add(emailTextBox);
+            createDoctorControls.Add(passwordTextBox);
+            createDoctorControls.Add(firstNameTextBox);
+            createDoctorControls.Add(middleNameTextBox);
+            createDoctorControls.Add(lastNameTextBox);
         }
 
         private void PopulateSearchCriteriaListBox()
         {
             searchCriteriaListBox.Items.Add("Имейл");
-            searchCriteriaListBox.Items.Add("Име");
             searchCriteriaListBox.Items.Add("Първо име");
             searchCriteriaListBox.Items.Add("Презиме");
             searchCriteriaListBox.Items.Add("Фамилия");
@@ -39,10 +51,13 @@ namespace HospitalManagement.Forms
                 var userAlreadyExists = db.Users.FirstOrDefault(x => x.Email == emailTextBox.Text);
                 if (userAlreadyExists != null) 
                 {
-                    // error user already exists - имейла трябва да е уникален
+                    MessageBox.Show("Вече има регистриран User с такъв имейл.", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
+                // ако ролята doctor не съществува ще хвърли грешка,
+                // което е напълно коректно, тъй като предстоящата логика
+                // е за доктори
                 var doctorRole = db.Roles.Single(x => x.Name.ToLower() == "doctor");
 
                 var user = new User()
@@ -55,7 +70,11 @@ namespace HospitalManagement.Forms
                 var savedUser = await db.AddAsync(user);
                 await db.SaveChangesAsync();
 
-                var doctorSpeciality = db.DoctorSpecialities.Single(x => x.Name.ToLower() == specialityListBox.Text.ToLower());
+                var currentSelectedSpeciality = specialityListBox.SelectedItem.ToString();
+
+                // тук отново метода .Single() би хвърлил грешка ако не бъде намерена докторска специалност
+                // или има повече от 1 докторска специалност с такова име
+                var doctorSpeciality = db.DoctorSpecialities.Single(x => x.Name == currentSelectedSpeciality);
                 var doctor = new Doctor()
                 {
                     FirstName = firstNameTextBox.Text,
@@ -67,6 +86,14 @@ namespace HospitalManagement.Forms
 
                 await db.Doctors.AddAsync(doctor);
                 await db.SaveChangesAsync();
+
+                foreach (var control in createDoctorControls)
+                {
+                    control.Text = "";
+                }
+                specialityListBox.SelectedIndex = -1;
+
+                MessageBox.Show("Вие успешно създадохте нов докторски акаунт. Този доктор вече може да влиза с въведените от вас имейл и парола.", "Успешно създаден докторски акаунт", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -78,24 +105,20 @@ namespace HospitalManagement.Forms
                 return false;
             }
 
-            foreach (var control in this.Controls)
-            {
-                var txtBox = control as TextBox;
-                if (txtBox != null) // ако не е NULL значи верно е TextBox
-                {
-                    // specialityNameTextBox не е нужен за създаване на доктор, затова го пропусни
-                    if (txtBox.Name==specialityNameTextBox.Name)
-                    {
-                        continue;
-                    }
+            // TODO implement searching for a doctor
+            // TODO implement show selected doctor info
+            // TODO implement edit selected doctor info
+            // TODO implement delete selected doctor / warning of deleting all his prescriptions
 
-                    // за всеки един TextBox ако текста само на един даже да не е попълнен
-                    if (string.IsNullOrWhiteSpace(txtBox.Text))
-                    {
-                        // върни false че не е попълнен
-                        return false;
-                    }
+            foreach (var control in createDoctorControls)
+            {
+                // за всеки един TextBox ако текста само на един даже да не е попълнен
+                if (string.IsNullOrWhiteSpace(control.Text))
+                {
+                    // върни false че не е попълнен
+                    return false;
                 }
+                
             }
             // ако всички полета за добавяне на доктор са попълнени коректно върни true
             return true;
@@ -113,7 +136,6 @@ namespace HospitalManagement.Forms
                     Name = specialityNameTextBox.Text
                 };
 
-
                 if (db.DoctorSpecialities.FirstOrDefault(x=>x.Name == speciality.Name) !=null)
                 {
                     MessageBox.Show("Вече съществува такава докторска специалност!", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -125,7 +147,6 @@ namespace HospitalManagement.Forms
                     LoadSpecialityListBoxData();
                     MessageBox.Show("Вие успешно създадохте нова докторска специалност. Вече можете да създавате доктори, които я притежават!", "Успешно създадена специалност за доктори", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
             }
         }
 
@@ -144,7 +165,7 @@ namespace HospitalManagement.Forms
         {
             if (specialityListBox.SelectedIndex==-1)
             {
-                MessageBox.Show("Моля изберете специалност, която желаете да изтриете.","Изберете специалност за изтриване", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Моля изберете специалност, която желаете да изтриете.","Изберете специалност за изтриване", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -158,6 +179,131 @@ namespace HospitalManagement.Forms
                     LoadSpecialityListBoxData();
                 }
             }
+        }
+
+        private void searchDoctorButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchTextBox.Text))
+            {
+                MessageBox.Show("Моля попълнете полето за търсене на доктор", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (searchCriteriaListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Моля изберете критерий по който да се извърши търсенето на доктор.", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var foundDoctorsList = new List<Doctor>();
+            var searchCriteria = searchCriteriaListBox.SelectedItem.ToString();
+            var searchTerm = searchTextBox.Text;
+            switch (searchCriteria)
+            {
+                case "Имейл":
+                    {
+                        // намери дали такъв User е регистриран с този имейл
+                        // ползваме SingleOrDefault тъй като
+                        // трябва да имаме само един User с такъв имейл
+                        // ако не бъде намерен 1 такъв User, то ми върни NULL
+                        // също така зареди ми Role полето на User-а с .Include() че да имам достъп до името на ролята на usera
+                        var user = db.Users.Include(u => u.Role).SingleOrDefault(u => u.Email == searchTerm);
+                        if (user != null)
+                        {
+                            // ако ролята е доктор
+                            if (user.Role.Name.ToLower() == "doctor")
+                            {
+                                // намери информацията за доктора, който отговаря на съответния user
+                                // използваме Single(), тъй като връзката ни е едно към едно
+                                // и не би трябвало да има друг доктор с Id на намерения user
+                                // всеки един доктор отговаря на точно един user - не по малко/ не повече
+
+                                var doctor = db.Doctors.Single(d => d.UserId == user.Id);
+                                foundDoctorsList.Add(doctor);
+                            }
+                            // ако ролята не му е доктор, не бива да го добавяме към списъка с намерени доктори
+                        }
+                        break;
+                    }
+                case "Първо име":
+                    {
+                        // ползваме .Where за да намерим колекция от доктори, които притежават това име
+                        var doctors = db.Doctors.Where(d => d.FirstName == searchTerm).ToList();
+                        if (doctors != null && doctors.Count != 0)
+                        {
+                            foundDoctorsList.AddRange(doctors);
+                        }
+                        break;
+                    }
+                case "Презиме":
+                    {
+                        var doctors = db.Doctors.Where(d => d.MiddleName == searchTerm).ToList();
+                        if (doctors != null && doctors.Count != 0)
+                        {
+                            foundDoctorsList.AddRange(doctors);
+                        }
+                        break;
+                    }
+                case "Фамилия":
+                    {
+                        var doctors = db.Doctors.Where(d => d.LastName == searchTerm).ToList();
+                        if (doctors != null && doctors.Count != 0)
+                        {
+                            foundDoctorsList.AddRange(doctors);
+                        }
+                        break;
+                    }
+                case "Специалност":
+                    {
+                        // отново ползваме SingleOrDefault
+                        // защото би трябвало да имаме не повече от 1 специалност с такова име в базата
+                        // и защото ако не бъде намерена 1 специалност, то да ми върне NULL
+                        var doctorSpeciality = db.DoctorSpecialities.SingleOrDefault(x => x.Name.ToLower() == searchTerm.ToLower());
+                        if (doctorSpeciality == null)
+                        {
+                            MessageBox.Show("Такава докторска специалност не съществува. Вижте дали сте я написали правилно.", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        var doctors = db.Doctors.Include(d=>d.DoctorSpeciality).Where(d => d.DoctorSpeciality.Name.ToLower() == searchTerm.ToLower()).ToList();
+                        if (doctors != null && doctors.Count != 0)
+                        {
+                            foundDoctorsList.AddRange(doctors);
+                        }
+                        break;
+                    }
+                default:
+                    // тука даже не би трябвало да стигне програмата тъй като имаме
+                    // само тези 5 неща в searchCriteriaListBox заредени
+                    return;
+
+            }
+
+            if (foundDoctorsList.Count() == 0)
+            {
+                MessageBox.Show("Няма намерени доктори по този критерий.", "Не бяха намерени доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foundDoctorsListBox.Items.Clear();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Бяха намерени " + foundDoctorsList.Count() + " доктора.", "Има намерени доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foreach (var doctor in foundDoctorsList)
+                {
+                    // зареди ми имейла на User профила на намерения доктор
+                    // ползваме Single() тъй като знаем че щом имаме намерени доктори
+                    // всеки един от тях принадлежи само на един User профил
+                    // нямаме един User профил, който да може да се използва от много доктори
+                    // тъй като отново -> имаме връзка едно към едно
+                    // един User съответства на един Doctor
+                    // и е невъзможно един и същи User да отговаря на повече от един доктор
+                    // заради дизайна на базата (foreign key-a към User-ите е UNIQUE, не може да се повтаря)
+                    var user = db.Users.Single(x => x.Id == doctor.UserId);
+                    foundDoctorsListBox.Items.Add(user.Email);
+                }
+                return;
+            }
+
         }
     }
 }

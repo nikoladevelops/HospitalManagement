@@ -235,6 +235,7 @@
             this.searchDoctorButton.TabIndex = 18;
             this.searchDoctorButton.Text = "Намери доктор";
             this.searchDoctorButton.UseVisualStyleBackColor = true;
+            this.searchDoctorButton.Click += new System.EventHandler(this.searchDoctorButton_Click);
             // 
             // label9
             // 
