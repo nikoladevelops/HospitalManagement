@@ -23,7 +23,7 @@ namespace HospitalManagement.Forms
             if (user != null) 
             {
                 Form formToDisplay = null;
-                switch (user.Role.Name.ToLower())
+                switch (user.Role.Name.ToLower()) // за всеки случай ако ролите са в друг case
                 {
                     case "admin":
                         formToDisplay= new AdminPanelForm(user);

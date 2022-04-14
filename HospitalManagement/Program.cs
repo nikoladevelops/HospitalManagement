@@ -29,7 +29,7 @@ namespace HospitalManagement
 
                 if (db.Roles.Count() < 2) // ако имаме по-малко от две роли, значи таблицата ни е празна
                 {
-                    // създаване на ролите в приложението
+                    // създаване на ролите в приложението / НА АНГЛИЙСКИ
                     var adminRole = new Role();
                     adminRole.Name = "admin";
 
@@ -40,18 +40,18 @@ namespace HospitalManagement
                     var savedDoctorRole = await db.Roles.AddAsync(doctorRole);
                     await db.SaveChangesAsync();
 
-                    // създаване на специалностите на докторите
+                    // създаване на специалностите на докторите ВИНАГИ С ГЛАВНИ БУКВИ
                     var doctorSpeciality1 = new DoctorSpeciality();
-                    doctorSpeciality1.Name = "Ушен лекар";
+                    doctorSpeciality1.Name = "УШЕН ЛЕКАР";
 
                     var doctorSpeciality2 = new DoctorSpeciality();
-                    doctorSpeciality2.Name = "Очен лекар";
+                    doctorSpeciality2.Name = "ОЧЕН ЛЕКАР";
 
                     var doctorSpeciality3 = new DoctorSpeciality();
-                    doctorSpeciality3.Name = "Хирург";
+                    doctorSpeciality3.Name = "ХИРУРГ";
 
                     var doctorSpeciality4 = new DoctorSpeciality();
-                    doctorSpeciality4.Name = "Спортна медицина";
+                    doctorSpeciality4.Name = "СПОРТНА МЕДИЦИНА";
 
                     await db.DoctorSpecialities.AddAsync(doctorSpeciality1);
                     await db.DoctorSpecialities.AddAsync(doctorSpeciality2);

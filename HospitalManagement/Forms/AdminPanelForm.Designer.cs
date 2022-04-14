@@ -131,7 +131,7 @@
             this.specialityListBox.ItemHeight = 15;
             this.specialityListBox.Location = new System.Drawing.Point(212, 177);
             this.specialityListBox.Name = "specialityListBox";
-            this.specialityListBox.Size = new System.Drawing.Size(128, 124);
+            this.specialityListBox.Size = new System.Drawing.Size(157, 124);
             this.specialityListBox.TabIndex = 8;
             // 
             // label4
@@ -203,7 +203,7 @@
             // 
             // deleteSpecialityButton
             // 
-            this.deleteSpecialityButton.Location = new System.Drawing.Point(346, 260);
+            this.deleteSpecialityButton.Location = new System.Drawing.Point(375, 260);
             this.deleteSpecialityButton.Name = "deleteSpecialityButton";
             this.deleteSpecialityButton.Size = new System.Drawing.Size(136, 41);
             this.deleteSpecialityButton.TabIndex = 17;

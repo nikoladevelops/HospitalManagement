@@ -1,5 +1,6 @@
 ﻿using HospitalManagement.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace HospitalManagement.Forms
 {
@@ -133,7 +134,7 @@ namespace HospitalManagement.Forms
             {
                 var speciality = new DoctorSpeciality()
                 {
-                    Name = specialityNameTextBox.Text
+                    Name = specialityNameTextBox.Text.ToUpperInvariant()
                 };
 
                 if (db.DoctorSpecialities.FirstOrDefault(x=>x.Name == speciality.Name) !=null)
@@ -258,14 +259,15 @@ namespace HospitalManagement.Forms
                         // отново ползваме SingleOrDefault
                         // защото би трябвало да имаме не повече от 1 специалност с такова име в базата
                         // и защото ако не бъде намерена 1 специалност, то да ми върне NULL
-                        var doctorSpeciality = db.DoctorSpecialities.SingleOrDefault(x => x.Name.ToLower() == searchTerm.ToLower());
+
+                        var doctorSpeciality = db.DoctorSpecialities.SingleOrDefault(x => x.Name == searchTerm.ToUpper());
                         if (doctorSpeciality == null)
                         {
-                            MessageBox.Show("Такава докторска специалност не съществува. Вижте дали сте я написали правилно.", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Такава докторска специалност не съществува.", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
-                        var doctors = db.Doctors.Include(d=>d.DoctorSpeciality).Where(d => d.DoctorSpeciality.Name.ToLower() == searchTerm.ToLower()).ToList();
+                        var doctors = db.Doctors.Include(d=>d.DoctorSpeciality).Where(d => d.DoctorSpeciality.Name == searchTerm.ToUpper()).ToList();
                         if (doctors != null && doctors.Count != 0)
                         {
                             foundDoctorsList.AddRange(doctors);
@@ -281,13 +283,14 @@ namespace HospitalManagement.Forms
 
             if (foundDoctorsList.Count() == 0)
             {
-                MessageBox.Show("Няма намерени доктори по този критерий.", "Не бяха намерени доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 foundDoctorsListBox.Items.Clear();
+                MessageBox.Show("Няма намерени доктори по този критерий.", "Не бяха намерени доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                MessageBox.Show("Бяха намерени " + foundDoctorsList.Count() + " доктора.", "Има намерени доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foundDoctorsListBox.Items.Clear();
+
                 foreach (var doctor in foundDoctorsList)
                 {
                     // зареди ми имейла на User профила на намерения доктор
@@ -301,9 +304,9 @@ namespace HospitalManagement.Forms
                     var user = db.Users.Single(x => x.Id == doctor.UserId);
                     foundDoctorsListBox.Items.Add(user.Email);
                 }
+                MessageBox.Show("Бяха намерени " + foundDoctorsList.Count() + " доктора.", "Има намерени доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
         }
     }
 }
