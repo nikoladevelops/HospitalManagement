@@ -37,12 +37,10 @@
             this.logoLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.displayEmailLabel = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -55,7 +53,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(225, 469);
+            this.panelMenu.Size = new System.Drawing.Size(225, 569);
             this.panelMenu.TabIndex = 28;
             // 
             // createSpecialityMenuButton
@@ -155,11 +153,11 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.titleLabel.Location = new System.Drawing.Point(416, 27);
+            this.titleLabel.Location = new System.Drawing.Point(305, 27);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(139, 25);
+            this.titleLabel.Size = new System.Drawing.Size(206, 25);
             this.titleLabel.TabIndex = 30;
-            this.titleLabel.Text = "Създай доктор";
+            this.titleLabel.Text = "отворена форма текст";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
@@ -175,32 +173,22 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(972, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(816, 80);
             this.tableLayoutPanel1.TabIndex = 31;
-            // 
-            // displayEmailLabel
-            // 
-            this.displayEmailLabel.AutoSize = true;
-            this.displayEmailLabel.Location = new System.Drawing.Point(6, 9);
-            this.displayEmailLabel.Name = "displayEmailLabel";
-            this.displayEmailLabel.Size = new System.Drawing.Size(190, 15);
-            this.displayEmailLabel.TabIndex = 1;
-            this.displayEmailLabel.Text = "имейла на админа се показва тук";
             // 
             // contentPanel
             // 
-            this.contentPanel.Controls.Add(this.displayEmailLabel);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(225, 80);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(972, 389);
+            this.contentPanel.Size = new System.Drawing.Size(816, 489);
             this.contentPanel.TabIndex = 32;
             // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 469);
+            this.ClientSize = new System.Drawing.Size(1041, 569);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelMenu);
@@ -211,8 +199,6 @@
             this.panelLogo.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.contentPanel.ResumeLayout(false);
-            this.contentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,7 +213,6 @@
         private Panel panelLogo;
         private Label logoLabel;
         private Label label12;
-        private Label displayEmailLabel;
         private Panel contentPanel;
     }
 }

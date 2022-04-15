@@ -25,6 +25,7 @@ namespace HospitalManagement.Forms.AdminForms
         {
             this.db = db;
             LoadSpecialityListBoxData();
+            PopulateCreateDoctorControls();
         }
 
         private void LoadSpecialityListBoxData()

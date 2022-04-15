@@ -54,7 +54,7 @@
             this.searchTextBox.Location = new System.Drawing.Point(236, 65);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(157, 23);
-            this.searchTextBox.TabIndex = 29;
+            this.searchTextBox.TabIndex = 1;
             // 
             // label10
             // 
@@ -70,7 +70,7 @@
             this.editSelectedDoctorButton.Location = new System.Drawing.Point(412, 308);
             this.editSelectedDoctorButton.Name = "editSelectedDoctorButton";
             this.editSelectedDoctorButton.Size = new System.Drawing.Size(157, 46);
-            this.editSelectedDoctorButton.TabIndex = 36;
+            this.editSelectedDoctorButton.TabIndex = 6;
             this.editSelectedDoctorButton.Text = "Редактирай избрания";
             this.editSelectedDoctorButton.UseVisualStyleBackColor = true;
             // 
@@ -81,14 +81,14 @@
             this.foundDoctorsListBox.Location = new System.Drawing.Point(412, 116);
             this.foundDoctorsListBox.Name = "foundDoctorsListBox";
             this.foundDoctorsListBox.Size = new System.Drawing.Size(157, 124);
-            this.foundDoctorsListBox.TabIndex = 33;
+            this.foundDoctorsListBox.TabIndex = 4;
             // 
             // showSelectedDoctorButton
             // 
             this.showSelectedDoctorButton.Location = new System.Drawing.Point(412, 256);
             this.showSelectedDoctorButton.Name = "showSelectedDoctorButton";
             this.showSelectedDoctorButton.Size = new System.Drawing.Size(157, 46);
-            this.showSelectedDoctorButton.TabIndex = 37;
+            this.showSelectedDoctorButton.TabIndex = 5;
             this.showSelectedDoctorButton.Text = "Покажи избрания";
             this.showSelectedDoctorButton.UseVisualStyleBackColor = true;
             // 
@@ -106,7 +106,7 @@
             this.deleteSelectedDoctorButton.Location = new System.Drawing.Point(412, 357);
             this.deleteSelectedDoctorButton.Name = "deleteSelectedDoctorButton";
             this.deleteSelectedDoctorButton.Size = new System.Drawing.Size(157, 46);
-            this.deleteSelectedDoctorButton.TabIndex = 35;
+            this.deleteSelectedDoctorButton.TabIndex = 7;
             this.deleteSelectedDoctorButton.Text = "Изтрий избрания";
             this.deleteSelectedDoctorButton.UseVisualStyleBackColor = true;
             // 
@@ -117,16 +117,17 @@
             this.searchCriteriaListBox.Location = new System.Drawing.Point(236, 116);
             this.searchCriteriaListBox.Name = "searchCriteriaListBox";
             this.searchCriteriaListBox.Size = new System.Drawing.Size(157, 124);
-            this.searchCriteriaListBox.TabIndex = 31;
+            this.searchCriteriaListBox.TabIndex = 2;
             // 
             // searchDoctorButton
             // 
             this.searchDoctorButton.Location = new System.Drawing.Point(232, 256);
             this.searchDoctorButton.Name = "searchDoctorButton";
             this.searchDoctorButton.Size = new System.Drawing.Size(157, 46);
-            this.searchDoctorButton.TabIndex = 28;
+            this.searchDoctorButton.TabIndex = 3;
             this.searchDoctorButton.Text = "Намери доктор";
             this.searchDoctorButton.UseVisualStyleBackColor = true;
+            this.searchDoctorButton.Click += new System.EventHandler(this.searchDoctorButton_Click);
             // 
             // SearchDoctorForm
             // 
@@ -144,7 +145,7 @@
             this.Controls.Add(this.searchCriteriaListBox);
             this.Controls.Add(this.searchDoctorButton);
             this.Name = "SearchDoctorForm";
-            this.Text = "SearchDoctorForm";
+            this.Text = "Търси доктор";
             this.ResumeLayout(false);
             this.PerformLayout();
 

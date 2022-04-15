@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace HospitalManagement.Forms.AdminForms
 {
-    public partial class CreateSpecialityForm : Form
+    public partial class DoctorSpecialityForm : Form
     {
         private ApplicationDbContext db;
 
-        public CreateSpecialityForm()
+        public DoctorSpecialityForm()
         {
             InitializeComponent();
         }
 
-        public CreateSpecialityForm(ApplicationDbContext db):this()
+        public DoctorSpecialityForm(ApplicationDbContext db):this()
         {
             this.db = db;
             LoadSpecialityListBoxData();

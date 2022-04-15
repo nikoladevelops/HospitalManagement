@@ -50,7 +50,7 @@
             this.specialityListBox.Location = new System.Drawing.Point(442, 155);
             this.specialityListBox.Name = "specialityListBox";
             this.specialityListBox.Size = new System.Drawing.Size(157, 124);
-            this.specialityListBox.TabIndex = 21;
+            this.specialityListBox.TabIndex = 6;
             // 
             // label5
             // 
@@ -66,7 +66,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(256, 81);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(157, 23);
-            this.emailTextBox.TabIndex = 23;
+            this.emailTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -82,9 +82,10 @@
             this.createDoctorButton.Location = new System.Drawing.Point(256, 322);
             this.createDoctorButton.Name = "createDoctorButton";
             this.createDoctorButton.Size = new System.Drawing.Size(134, 43);
-            this.createDoctorButton.TabIndex = 14;
+            this.createDoctorButton.TabIndex = 7;
             this.createDoctorButton.Text = "Създай доктор";
             this.createDoctorButton.UseVisualStyleBackColor = true;
+            this.createDoctorButton.Click += new System.EventHandler(this.createDoctorButton_Click);
             // 
             // label6
             // 
@@ -100,7 +101,7 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(256, 180);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(157, 23);
-            this.firstNameTextBox.TabIndex = 15;
+            this.firstNameTextBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -116,7 +117,7 @@
             this.middleNameTextBox.Location = new System.Drawing.Point(256, 229);
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.Size = new System.Drawing.Size(157, 23);
-            this.middleNameTextBox.TabIndex = 17;
+            this.middleNameTextBox.TabIndex = 4;
             // 
             // label2
             // 
@@ -132,7 +133,7 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(256, 281);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(157, 23);
-            this.lastNameTextBox.TabIndex = 19;
+            this.lastNameTextBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -148,7 +149,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(256, 129);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(157, 23);
-            this.passwordTextBox.TabIndex = 25;
+            this.passwordTextBox.TabIndex = 2;
             // 
             // CreateDoctorForm
             // 
@@ -169,7 +170,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.passwordTextBox);
             this.Name = "CreateDoctorForm";
-            this.Text = "CreateDoctorForm";
+            this.Text = "Създай доктор";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,32 +17,42 @@ namespace HospitalManagement.Forms
         public AdminPanelForm(User user):this()
         {
             this.db = new ApplicationDbContext();
-            displayEmailLabel.Text = "Влезли сте като: " + user.Email;
             activeButtonColor = Color.FromArgb(0, 151, 230);
             notActiveButtonColor = Color.FromArgb(0, 168, 255);
 
             // това е default-ната форма която е отворена в началото
-            createDoctorMenuButton.BackColor = activeButtonColor;
-            OpenChildForm(new CreateDoctorForm());
+            MakeFormActive(new HomeForm(user.Email, user.Role.Name));
         }
 
         private void OpenChildForm(Form childForm)
         {
-            if (activeForm !=null)
+            if (childForm.Text == activeForm.Text)
+            {
+                // ако искаме отново да отворим същата форма, няма нужда да я презареждаме.
+                return;
+            }
+
+            // затвори предишната форма
+            if (activeForm != null)
             {
                 activeForm.Close();
             }
+            // направи новата форма да е активна
+            MakeFormActive(childForm);
+        }
+
+        private void MakeFormActive(Form childForm)
+        {
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             contentPanel.Controls.Add(childForm);
-            titleLabel.Text =childForm.Name;
+            titleLabel.Text = childForm.Text;
             childForm.BringToFront();
             childForm.Show();
-
         }
-        
+
         private void createDoctorMenuButton_Click(object sender, EventArgs e)
         {
             createDoctorMenuButton.BackColor = activeButtonColor;
@@ -67,7 +77,7 @@ namespace HospitalManagement.Forms
             searchDoctorMenuButton.BackColor = notActiveButtonColor;
             createDoctorMenuButton.BackColor = notActiveButtonColor;
 
-            OpenChildForm(new CreateSpecialityForm(db));
+            OpenChildForm(new DoctorSpecialityForm(db));
         }
     }
 }

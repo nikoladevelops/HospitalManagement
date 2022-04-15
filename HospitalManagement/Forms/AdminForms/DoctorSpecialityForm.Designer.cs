@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagement.Forms.AdminForms
 {
-    partial class CreateSpecialityForm
+    partial class DoctorSpecialityForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,18 +41,20 @@
             this.deleteSpecialityButton.Location = new System.Drawing.Point(441, 283);
             this.deleteSpecialityButton.Name = "deleteSpecialityButton";
             this.deleteSpecialityButton.Size = new System.Drawing.Size(136, 41);
-            this.deleteSpecialityButton.TabIndex = 23;
+            this.deleteSpecialityButton.TabIndex = 4;
             this.deleteSpecialityButton.Text = "Изтрий избрана специалност";
             this.deleteSpecialityButton.UseVisualStyleBackColor = true;
+            this.deleteSpecialityButton.Click += new System.EventHandler(this.deleteSpecialityButton_Click);
             // 
             // createSpecialityButton
             // 
             this.createSpecialityButton.Location = new System.Drawing.Point(278, 126);
             this.createSpecialityButton.Name = "createSpecialityButton";
             this.createSpecialityButton.Size = new System.Drawing.Size(157, 46);
-            this.createSpecialityButton.TabIndex = 20;
+            this.createSpecialityButton.TabIndex = 2;
             this.createSpecialityButton.Text = "Създай специалност";
             this.createSpecialityButton.UseVisualStyleBackColor = true;
+            this.createSpecialityButton.Click += new System.EventHandler(this.createSpecialityButton_Click);
             // 
             // specialityListBox
             // 
@@ -61,7 +63,7 @@
             this.specialityListBox.Location = new System.Drawing.Point(278, 200);
             this.specialityListBox.Name = "specialityListBox";
             this.specialityListBox.Size = new System.Drawing.Size(157, 124);
-            this.specialityListBox.TabIndex = 18;
+            this.specialityListBox.TabIndex = 3;
             // 
             // label7
             // 
@@ -77,7 +79,7 @@
             this.specialityNameTextBox.Location = new System.Drawing.Point(278, 98);
             this.specialityNameTextBox.Name = "specialityNameTextBox";
             this.specialityNameTextBox.Size = new System.Drawing.Size(157, 23);
-            this.specialityNameTextBox.TabIndex = 21;
+            this.specialityNameTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -88,7 +90,7 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Избери специалност";
             // 
-            // CreateSpecialityForm
+            // DoctorSpecialityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,8 +101,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.specialityNameTextBox);
             this.Controls.Add(this.label4);
-            this.Name = "CreateSpecialityForm";
-            this.Text = "CreateSpecialityForm";
+            this.Name = "DoctorSpecialityForm";
+            this.Text = "Докторски специалности";
             this.ResumeLayout(false);
             this.PerformLayout();
 
