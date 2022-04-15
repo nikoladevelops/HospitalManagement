@@ -70,7 +70,7 @@
             this.createSpecialityMenuButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.createSpecialityMenuButton.Size = new System.Drawing.Size(225, 60);
             this.createSpecialityMenuButton.TabIndex = 31;
-            this.createSpecialityMenuButton.Text = "  Създай специалност";
+            this.createSpecialityMenuButton.Text = "  Докторски специалности";
             this.createSpecialityMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createSpecialityMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.createSpecialityMenuButton.UseVisualStyleBackColor = true;
