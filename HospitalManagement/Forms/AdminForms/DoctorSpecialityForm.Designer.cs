@@ -43,13 +43,13 @@
             // deleteSpecialityButton
             // 
             this.deleteSpecialityButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deleteSpecialityButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.deleteSpecialityButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
             this.deleteSpecialityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteSpecialityButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deleteSpecialityButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.deleteSpecialityButton.Location = new System.Drawing.Point(459, 310);
+            this.deleteSpecialityButton.Location = new System.Drawing.Point(260, 357);
             this.deleteSpecialityButton.Name = "deleteSpecialityButton";
-            this.deleteSpecialityButton.Size = new System.Drawing.Size(235, 41);
+            this.deleteSpecialityButton.Size = new System.Drawing.Size(193, 55);
             this.deleteSpecialityButton.TabIndex = 4;
             this.deleteSpecialityButton.Text = "Изтрий избрана специалност";
             this.deleteSpecialityButton.UseVisualStyleBackColor = false;

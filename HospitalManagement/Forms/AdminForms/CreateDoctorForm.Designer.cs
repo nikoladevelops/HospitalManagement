@@ -246,7 +246,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label8.Location = new System.Drawing.Point(251, 39);
+            this.label8.Location = new System.Drawing.Point(211, 37);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 25);
             this.label8.TabIndex = 36;
@@ -271,7 +271,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label9.Location = new System.Drawing.Point(251, 101);
+            this.label9.Location = new System.Drawing.Point(211, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 25);
             this.label9.TabIndex = 37;
@@ -284,9 +284,9 @@
             this.createDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createDoctorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createDoctorButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.createDoctorButton.Location = new System.Drawing.Point(251, 353);
+            this.createDoctorButton.Location = new System.Drawing.Point(211, 353);
             this.createDoctorButton.Name = "createDoctorButton";
-            this.createDoctorButton.Size = new System.Drawing.Size(157, 49);
+            this.createDoctorButton.Size = new System.Drawing.Size(197, 49);
             this.createDoctorButton.TabIndex = 7;
             this.createDoctorButton.Text = "Създай доктор";
             this.createDoctorButton.UseVisualStyleBackColor = false;
@@ -296,27 +296,27 @@
             // 
             this.passwordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordTextBox.Location = new System.Drawing.Point(251, 127);
+            this.passwordTextBox.Location = new System.Drawing.Point(211, 127);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(157, 27);
+            this.passwordTextBox.Size = new System.Drawing.Size(197, 27);
             this.passwordTextBox.TabIndex = 2;
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameTextBox.Location = new System.Drawing.Point(251, 314);
+            this.lastNameTextBox.Location = new System.Drawing.Point(211, 314);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(157, 27);
+            this.lastNameTextBox.Size = new System.Drawing.Size(197, 27);
             this.lastNameTextBox.TabIndex = 5;
             // 
             // middleNameTextBox
             // 
             this.middleNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.middleNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.middleNameTextBox.Location = new System.Drawing.Point(251, 252);
+            this.middleNameTextBox.Location = new System.Drawing.Point(211, 252);
             this.middleNameTextBox.Name = "middleNameTextBox";
-            this.middleNameTextBox.Size = new System.Drawing.Size(157, 27);
+            this.middleNameTextBox.Size = new System.Drawing.Size(197, 27);
             this.middleNameTextBox.TabIndex = 4;
             // 
             // label10
@@ -325,7 +325,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label10.Location = new System.Drawing.Point(251, 288);
+            this.label10.Location = new System.Drawing.Point(211, 286);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 25);
             this.label10.TabIndex = 35;
@@ -335,9 +335,9 @@
             // 
             this.firstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameTextBox.Location = new System.Drawing.Point(251, 188);
+            this.firstNameTextBox.Location = new System.Drawing.Point(211, 188);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(157, 27);
+            this.firstNameTextBox.Size = new System.Drawing.Size(197, 27);
             this.firstNameTextBox.TabIndex = 3;
             // 
             // label11
@@ -346,7 +346,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label11.Location = new System.Drawing.Point(251, 224);
+            this.label11.Location = new System.Drawing.Point(211, 218);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 25);
             this.label11.TabIndex = 34;
@@ -358,7 +358,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label12.Location = new System.Drawing.Point(251, 162);
+            this.label12.Location = new System.Drawing.Point(211, 160);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 25);
             this.label12.TabIndex = 33;
@@ -368,9 +368,9 @@
             // 
             this.emailTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emailTextBox.Location = new System.Drawing.Point(251, 65);
+            this.emailTextBox.Location = new System.Drawing.Point(211, 65);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(157, 27);
+            this.emailTextBox.Size = new System.Drawing.Size(197, 27);
             this.emailTextBox.TabIndex = 1;
             // 
             // tableLayoutPanel7
