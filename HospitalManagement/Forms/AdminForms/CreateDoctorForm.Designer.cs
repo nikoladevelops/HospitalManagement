@@ -286,7 +286,7 @@
             this.createDoctorButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.createDoctorButton.Location = new System.Drawing.Point(251, 353);
             this.createDoctorButton.Name = "createDoctorButton";
-            this.createDoctorButton.Size = new System.Drawing.Size(134, 43);
+            this.createDoctorButton.Size = new System.Drawing.Size(157, 49);
             this.createDoctorButton.TabIndex = 7;
             this.createDoctorButton.Text = "Създай доктор";
             this.createDoctorButton.UseVisualStyleBackColor = false;
@@ -295,28 +295,28 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordTextBox.Location = new System.Drawing.Point(251, 127);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(157, 33);
+            this.passwordTextBox.Size = new System.Drawing.Size(157, 27);
             this.passwordTextBox.TabIndex = 2;
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lastNameTextBox.Location = new System.Drawing.Point(251, 314);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(157, 33);
+            this.lastNameTextBox.Size = new System.Drawing.Size(157, 27);
             this.lastNameTextBox.TabIndex = 5;
             // 
             // middleNameTextBox
             // 
             this.middleNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.middleNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.middleNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.middleNameTextBox.Location = new System.Drawing.Point(251, 252);
             this.middleNameTextBox.Name = "middleNameTextBox";
-            this.middleNameTextBox.Size = new System.Drawing.Size(157, 33);
+            this.middleNameTextBox.Size = new System.Drawing.Size(157, 27);
             this.middleNameTextBox.TabIndex = 4;
             // 
             // label10
@@ -334,10 +334,10 @@
             // firstNameTextBox
             // 
             this.firstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.firstNameTextBox.Location = new System.Drawing.Point(251, 188);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(157, 33);
+            this.firstNameTextBox.Size = new System.Drawing.Size(157, 27);
             this.firstNameTextBox.TabIndex = 3;
             // 
             // label11
@@ -367,10 +367,10 @@
             // emailTextBox
             // 
             this.emailTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.emailTextBox.Location = new System.Drawing.Point(251, 65);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(157, 33);
+            this.emailTextBox.Size = new System.Drawing.Size(157, 27);
             this.emailTextBox.TabIndex = 1;
             // 
             // tableLayoutPanel7
