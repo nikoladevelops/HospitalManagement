@@ -47,7 +47,7 @@
             this.deleteSpecialityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteSpecialityButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deleteSpecialityButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.deleteSpecialityButton.Location = new System.Drawing.Point(260, 357);
+            this.deleteSpecialityButton.Location = new System.Drawing.Point(288, 358);
             this.deleteSpecialityButton.Name = "deleteSpecialityButton";
             this.deleteSpecialityButton.Size = new System.Drawing.Size(193, 55);
             this.deleteSpecialityButton.TabIndex = 4;
@@ -62,7 +62,7 @@
             this.createSpecialityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createSpecialityButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createSpecialityButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.createSpecialityButton.Location = new System.Drawing.Point(260, 110);
+            this.createSpecialityButton.Location = new System.Drawing.Point(288, 111);
             this.createSpecialityButton.Name = "createSpecialityButton";
             this.createSpecialityButton.Size = new System.Drawing.Size(193, 46);
             this.createSpecialityButton.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.specialityListBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.specialityListBox.FormattingEnabled = true;
             this.specialityListBox.ItemHeight = 20;
-            this.specialityListBox.Location = new System.Drawing.Point(260, 187);
+            this.specialityListBox.Location = new System.Drawing.Point(288, 188);
             this.specialityListBox.Name = "specialityListBox";
             this.specialityListBox.Size = new System.Drawing.Size(193, 164);
             this.specialityListBox.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label7.Location = new System.Drawing.Point(260, 47);
+            this.label7.Location = new System.Drawing.Point(288, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(191, 25);
             this.label7.TabIndex = 22;
@@ -97,7 +97,7 @@
             // 
             this.specialityNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.specialityNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.specialityNameTextBox.Location = new System.Drawing.Point(260, 75);
+            this.specialityNameTextBox.Location = new System.Drawing.Point(288, 76);
             this.specialityNameTextBox.Name = "specialityNameTextBox";
             this.specialityNameTextBox.Size = new System.Drawing.Size(193, 27);
             this.specialityNameTextBox.TabIndex = 1;
@@ -108,7 +108,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.label4.Location = new System.Drawing.Point(260, 159);
+            this.label4.Location = new System.Drawing.Point(288, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(193, 25);
             this.label4.TabIndex = 19;
