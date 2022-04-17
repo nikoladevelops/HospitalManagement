@@ -198,15 +198,25 @@ namespace HospitalManagement.Forms.AdminForms
                 MessageBox.Show("Трябва да изберете доктор първо.", "Не сте избрали доктор.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+            var selectedUser = GetSelectedUser();
+            openChildForm(new EditDoctorForm(db, selectedUser));
         }
 
-        private void deleteSelectedDoctorButton_Click(object sender, EventArgs e)
+        private async void deleteSelectedDoctorButton_Click(object sender, EventArgs e)
         {
             if (!CheckIfDoctorSelected())
             {
                 MessageBox.Show("Трябва да изберете доктор първо.", "Не сте избрали доктор.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            var selectedUser = GetSelectedUser();
+            var result = MessageBox.Show("Вмомента сте на път да изтриете доктора " +selectedUser.Email + ". Това ще изтрие и всичките негови рецепти. Искате ли да изтриете този доктор?", "Сигурни ли сте че искате да изтриете този доктор?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                var userToDelete = db.Users.Single(u => u.Id == selectedUser.Id);
+                db.Users.Remove(userToDelete);
+                await db.SaveChangesAsync();
             }
         }
     }

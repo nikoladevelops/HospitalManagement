@@ -1,4 +1,5 @@
 ﻿using HospitalManagement.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,21 +12,32 @@ using System.Windows.Forms;
 
 namespace HospitalManagement.Forms.AdminForms
 {
-    public partial class CreateDoctorForm : Form
+    public partial class EditDoctorForm : Form
     {
-        private List<Control> createDoctorControls;
         private ApplicationDbContext db;
+        private List<Control> createDoctorControls;
 
-        public CreateDoctorForm()
+        public EditDoctorForm()
         {
             InitializeComponent();
         }
-
-        public CreateDoctorForm(ApplicationDbContext db):this()
+        // тази форма трябва да се ползва само със User-и, които са в роля Doctor
+        // ако сложим user с друга роля ще получим грешка, имай го на предвид
+        public EditDoctorForm(ApplicationDbContext db, User user):this()
         {
             this.db = db;
             LoadSpecialityListBoxData();
             PopulateCreateDoctorControls();
+
+            // вземи информацията на доктора за съответния user
+            // знаем че ползваме .Single() понеже имаме връзка едно към едно
+            // точно това би хвърлило грешката ако user-а всъщност няма докторски акаунт
+            var doctorInfo = db.Doctors
+                .Include(d => d.DoctorSpeciality)
+                .Single(d => d.UserId == user.Id);
+
+
+
         }
 
         private void LoadSpecialityListBoxData()
@@ -49,7 +61,7 @@ namespace HospitalManagement.Forms.AdminForms
             createDoctorControls.Add(lastNameTextBox);
         }
 
-        private async void createDoctorButton_Click(object sender, EventArgs e)
+        private async void editDoctorButton_Click(object sender, EventArgs e)
         {
             if (!CheckIfAllInfoIsFilled())
             {
@@ -105,7 +117,6 @@ namespace HospitalManagement.Forms.AdminForms
                 MessageBox.Show("Вие успешно създадохте нов докторски акаунт. Този доктор вече може да влиза с въведените от вас имейл и парола.", "Успешно създаден докторски акаунт", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private bool CheckIfAllInfoIsFilled()
         {
             // ако не е избрана специалност за доктора
