@@ -217,6 +217,7 @@ namespace HospitalManagement.Forms.AdminForms
                 var userToDelete = db.Users.Single(u => u.Id == selectedUser.Id);
                 db.Users.Remove(userToDelete);
                 await db.SaveChangesAsync();
+                foundDoctorsListBox.Items.Remove(selectedUser.Email);
             }
         }
     }

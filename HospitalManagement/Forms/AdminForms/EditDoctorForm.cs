@@ -16,7 +16,8 @@ namespace HospitalManagement.Forms.AdminForms
     {
         private ApplicationDbContext db;
         private List<Control> createDoctorControls;
-
+        private User userInfoToEdit;
+        private Doctor doctorInfoToEdit;
         public EditDoctorForm()
         {
             InitializeComponent();
@@ -36,7 +37,19 @@ namespace HospitalManagement.Forms.AdminForms
                 .Include(d => d.DoctorSpeciality)
                 .Single(d => d.UserId == user.Id);
 
+            // сложи индекса на избраната специалност да е специалността на доктора
+            var index = this.specialityListBox.Items.IndexOf(doctorInfo.DoctorSpeciality.Name);
+            specialityListBox.SelectedIndex = index;
 
+            // попълни и другите данни на доктора
+            emailTextBox.Text = user.Email;
+            passwordTextBox.Text = user.Password;
+            firstNameTextBox.Text = doctorInfo.FirstName;
+            middleNameTextBox.Text=doctorInfo.MiddleName;
+            lastNameTextBox.Text = doctorInfo.LastName;
+
+            this.userInfoToEdit = user;
+            this.doctorInfoToEdit = doctorInfo;
 
         }
 
@@ -65,47 +78,29 @@ namespace HospitalManagement.Forms.AdminForms
         {
             if (!CheckIfAllInfoIsFilled())
             {
-                MessageBox.Show("Моля попълни всички полета нужни за създаването на доктор!", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Моля попълни всички полета нужни за редактиране на доктор!", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                var userAlreadyExists = db.Users.FirstOrDefault(x => x.Email == emailTextBox.Text);
-                if (userAlreadyExists != null)
-                {
-                    MessageBox.Show("Вече има регистриран User с такъв имейл.", "Грешка.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
 
-                // ако ролята doctor не съществува ще хвърли грешка,
-                // което е напълно коректно, тъй като предстоящата логика
-                // е за доктори
-                var doctorRole = db.Roles.Single(x => x.Name.ToLower() == "doctor");
-
-                var user = new User()
-                {
-                    Email = emailTextBox.Text,
-                    Password = passwordTextBox.Text,
-                    RoleId = doctorRole.Id
-                };
-
-                var savedUser = await db.AddAsync(user);
-                await db.SaveChangesAsync();
+                var dbUser = db.Users.Single(u => u.Id == userInfoToEdit.Id);
+                var dbDoctor = db.Doctors.Single(d => d.Id == doctorInfoToEdit.Id);
 
                 var currentSelectedSpeciality = specialityListBox.SelectedItem.ToString();
-
-                // тук отново метода .Single() би хвърлил грешка ако не бъде намерена докторска специалност
-                // или има повече от 1 докторска специалност с такова име
                 var doctorSpeciality = db.DoctorSpecialities.Single(x => x.Name == currentSelectedSpeciality);
-                var doctor = new Doctor()
-                {
-                    FirstName = firstNameTextBox.Text,
-                    MiddleName = middleNameTextBox.Text,
-                    LastName = lastNameTextBox.Text,
-                    UserId = savedUser.Entity.Id,
-                    DoctorSpecialityId = doctorSpeciality.Id
-                };
 
-                await db.Doctors.AddAsync(doctor);
+                // редактирай User профила на доктора
+                dbUser.Email = emailTextBox.Text;
+                dbUser.Password = passwordTextBox.Text;
+
+                await db.SaveChangesAsync();
+
+                // редактирай самата информация на доктора
+                dbDoctor.FirstName = firstNameTextBox.Text;
+                dbDoctor.MiddleName = middleNameTextBox.Text;
+                dbDoctor.LastName = lastNameTextBox.Text;
+                dbDoctor.DoctorSpecialityId = doctorSpeciality.Id;
+
                 await db.SaveChangesAsync();
 
                 foreach (var control in createDoctorControls)
@@ -114,7 +109,7 @@ namespace HospitalManagement.Forms.AdminForms
                 }
                 specialityListBox.SelectedIndex = -1;
 
-                MessageBox.Show("Вие успешно създадохте нов докторски акаунт. Този доктор вече може да влиза с въведените от вас имейл и парола.", "Успешно създаден докторски акаунт", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Вие успешно редактирахте този докторски акаунт.", "Успешно редактиран докторски акаунт", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private bool CheckIfAllInfoIsFilled()
