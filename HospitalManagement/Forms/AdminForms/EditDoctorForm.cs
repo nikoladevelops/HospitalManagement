@@ -103,12 +103,6 @@ namespace HospitalManagement.Forms.AdminForms
 
                 await db.SaveChangesAsync();
 
-                foreach (var control in createDoctorControls)
-                {
-                    control.Text = "";
-                }
-                specialityListBox.SelectedIndex = -1;
-
                 MessageBox.Show("Вие успешно редактирахте този докторски акаунт.", "Успешно редактиран докторски акаунт", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
