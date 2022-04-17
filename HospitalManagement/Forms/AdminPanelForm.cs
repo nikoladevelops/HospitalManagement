@@ -40,7 +40,6 @@ namespace HospitalManagement.Forms
             // направи новата форма да е активна
             MakeFormActive(childForm);
         }
-
         private void MakeFormActive(Form childForm)
         {
             activeForm = childForm;
@@ -52,7 +51,6 @@ namespace HospitalManagement.Forms
             childForm.BringToFront();
             childForm.Show();
         }
-
         private void createDoctorMenuButton_Click(object sender, EventArgs e)
         {
             createDoctorMenuButton.BackColor = activeButtonColor;
@@ -61,7 +59,6 @@ namespace HospitalManagement.Forms
 
             OpenChildForm(new CreateDoctorForm(db));
         }
-
         private void searchDoctorMenuButton_Click(object sender, EventArgs e)
         {
             searchDoctorMenuButton.BackColor = activeButtonColor;

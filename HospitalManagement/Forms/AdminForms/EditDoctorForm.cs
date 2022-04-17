@@ -92,8 +92,8 @@ namespace HospitalManagement.Forms.AdminForms
 
                 // провери дали вече има друг user с такъв имейл
 
-                var dbUserWithNewEmail = db.Users.FirstOrDefault(u => u.Email == emailTextBox.Text);
-                // ако не е Null значи има такъв user с такъв имейл
+                var dbUserWithNewEmail = db.Users.SingleOrDefault(u => u.Email == emailTextBox.Text);
+                // ако не е NULL значи има такъв user с такъв имейл
                 if (dbUserWithNewEmail != null) 
                 {
                     // ако Id-то на Userа който едитваме НЕ Е равно на Id-то на usera с новия имейл
