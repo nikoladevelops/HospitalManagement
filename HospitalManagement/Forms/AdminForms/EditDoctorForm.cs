@@ -82,7 +82,6 @@ namespace HospitalManagement.Forms.AdminForms
             }
             else
             {
-
                 var dbUser = db.Users.Single(u => u.Id == userInfoToEdit.Id);
                 var dbDoctor = db.Doctors.Single(d => d.Id == doctorInfoToEdit.Id);
 
@@ -90,6 +89,24 @@ namespace HospitalManagement.Forms.AdminForms
                 var doctorSpeciality = db.DoctorSpecialities.Single(x => x.Name == currentSelectedSpeciality);
 
                 // редактирай User профила на доктора
+
+                // провери дали вече има друг user с такъв имейл
+
+                var dbUserWithNewEmail = db.Users.FirstOrDefault(u => u.Email == emailTextBox.Text);
+                // ако не е Null значи има такъв user с такъв имейл
+                if (dbUserWithNewEmail != null) 
+                {
+                    // ако Id-то на Userа който едитваме НЕ Е равно на Id-то на usera с новия имейл
+                    // то тогава значи че това са два различни Usera
+                    // тоест вече има регистриран User с този имейл
+                    // и съответно не можем да променим този който редактираме на него.
+                    if (dbUser.Id != dbUserWithNewEmail.Id)
+                    {
+                        MessageBox.Show("Вече има такъв регистриран потребител с този имейл. Моля пробвайте друг.", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
                 dbUser.Email = emailTextBox.Text;
                 dbUser.Password = passwordTextBox.Text;
 
