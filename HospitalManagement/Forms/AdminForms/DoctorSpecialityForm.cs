@@ -60,7 +60,7 @@ namespace HospitalManagement.Forms.AdminForms
                     await db.DoctorSpecialities.AddAsync(speciality);
                     await db.SaveChangesAsync();
                     LoadSpecialityListBoxData();
-                    MessageBox.Show("Вие успешно създадохте нова докторска специалност. Вече можете да създавате доктори, които я притежават!", "Успешно създадена специалност за доктори", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Вие успешно създадохте нова докторска специалност. Вече можете да създавате доктори, които я притежават!", "Успешно създадена специалност за доктори.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace HospitalManagement.Forms.AdminForms
         {
             if (specialityListBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Моля изберете специалност, която желаете да изтриете.", "Изберете специалност за изтриване", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Моля изберете специалност, която желаете да изтриете.", "Изберете специалност за изтриване.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

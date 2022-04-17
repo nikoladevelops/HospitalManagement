@@ -16,17 +16,24 @@ namespace HospitalManagement.Forms.AdminForms
     {
         private ApplicationDbContext db;
 
+        // тези полета ги използваме за да може да предадем от AdminPanel методи, които
+        // да се изпълнят при изпълняването на event handler-ите, които отговарят
+        // при кликане на съответен бутон
+        // накратко даваме код ОТВЪН, който да се изпълни при кликането на бутоните.
+        private Action<Form> openChildForm;
         public SearchDoctorForm()
         {
             InitializeComponent();
         }
-
-        public SearchDoctorForm(ApplicationDbContext db) : this()
+        // в конструктора задължаваме на външния клас, който прави инстанция на този клас
+        // да предаде методите, които да се изпълнят при кликане на бутоните
+        // за показване на доктор/ редактиране на доктор/ изтриване на доктор
+        public SearchDoctorForm(ApplicationDbContext db, Action<Form> openChildForm) : this()
         {
             this.db = db;
+            this.openChildForm = openChildForm;
             PopulateSearchCriteriaListBox();
         }
-
         private void PopulateSearchCriteriaListBox()
         {
             searchCriteriaListBox.Items.Add("Имейл");
@@ -35,7 +42,6 @@ namespace HospitalManagement.Forms.AdminForms
             searchCriteriaListBox.Items.Add("Фамилия");
             searchCriteriaListBox.Items.Add("Специалност");
         }
-
         private void searchDoctorButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(searchTextBox.Text))
@@ -162,7 +168,6 @@ namespace HospitalManagement.Forms.AdminForms
                 return;
             }
         }
-
         private bool CheckIfDoctorSelected()
         {
             if (foundDoctorsListBox.SelectedIndex == -1)
@@ -170,6 +175,39 @@ namespace HospitalManagement.Forms.AdminForms
                 return false;
             }
             return true;
+        }
+        private User GetSelectedUser()
+        {
+            var selectedEmail = foundDoctorsListBox.SelectedItem.ToString();
+            return db.Users.Single(u => u.Email == selectedEmail);
+        }
+        private void showSelectedDoctorButton_Click(object sender, EventArgs e)
+        {
+            if (!CheckIfDoctorSelected())
+            {
+                MessageBox.Show("Трябва да изберете доктор първо.", "Не сте избрали доктор.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var selectedUser = GetSelectedUser();
+            openChildForm(new ShowDoctorForm(db, selectedUser));
+        }
+        private void editSelectedDoctorButton_Click(object sender, EventArgs e)
+        {
+            if (!CheckIfDoctorSelected())
+            {
+                MessageBox.Show("Трябва да изберете доктор първо.", "Не сте избрали доктор.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+        }
+
+        private void deleteSelectedDoctorButton_Click(object sender, EventArgs e)
+        {
+            if (!CheckIfDoctorSelected())
+            {
+                MessageBox.Show("Трябва да изберете доктор първо.", "Не сте избрали доктор.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

@@ -90,6 +90,7 @@
             this.editSelectedDoctorButton.TabIndex = 6;
             this.editSelectedDoctorButton.Text = "Редактирай избрания";
             this.editSelectedDoctorButton.UseVisualStyleBackColor = false;
+            this.editSelectedDoctorButton.Click += new System.EventHandler(this.editSelectedDoctorButton_Click);
             // 
             // foundDoctorsListBox
             // 
@@ -115,6 +116,7 @@
             this.showSelectedDoctorButton.TabIndex = 5;
             this.showSelectedDoctorButton.Text = "Покажи избрания";
             this.showSelectedDoctorButton.UseVisualStyleBackColor = false;
+            this.showSelectedDoctorButton.Click += new System.EventHandler(this.showSelectedDoctorButton_Click);
             // 
             // label9
             // 
@@ -141,6 +143,7 @@
             this.deleteSelectedDoctorButton.TabIndex = 7;
             this.deleteSelectedDoctorButton.Text = "Изтрий избрания";
             this.deleteSelectedDoctorButton.UseVisualStyleBackColor = false;
+            this.deleteSelectedDoctorButton.Click += new System.EventHandler(this.deleteSelectedDoctorButton_Click);
             // 
             // searchCriteriaListBox
             // 
