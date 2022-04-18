@@ -73,18 +73,13 @@ namespace HospitalManagement.Forms.DoctorForms
             }
             else
             {
-                var result = MessageBox.Show("Ако изтриете това заболяване и има пациенти, които го имат, и те ще бъдат изтрити заедно с него! Всичките му рецепти също ще бъдат изтрити! Искате ли да продължите въпреки това?", "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var result = MessageBox.Show("Наистина ли искате да изтриете това заболяване? Всички пациенти страдащи от него вече няма да го имат. Искате ли да продължите?", "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
                     // дай ми единственото заболяване с такова име
                     var selectedMedicalCondition = db.MedicalConditions.Single(x => x.Name == medicalConditionListBox.SelectedItem.ToString());
                     
-                    // когато изтрием дадено заболяване
-                    // автоматично ще бъдат изтрити
-                    // всички пациенти, които го притежават
-                    // от там пък ще бъдат изтрити и всички рецепти издавани на пациента
-                    // заради опцията CASCADE на базата
                     db.MedicalConditions.Remove(selectedMedicalCondition);
                     await db.SaveChangesAsync();
                     LoadMedicalConditionListBoxData();

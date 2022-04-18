@@ -66,6 +66,8 @@ namespace HospitalManagement.Forms
             createPatientMenuButton.BackColor = notActiveButtonColor;
             searchPatientMenuButton.BackColor = activeButtonColor;
             medicalConditionsMenuButton.BackColor = notActiveButtonColor;
+            var openChildFormMethod = (Form form) => OpenChildForm(form);
+            OpenChildForm(new SearchPatientForm(db, openChildFormMethod));
         }
 
         private void medicalConditionsMenuButton_Click(object sender, EventArgs e)
