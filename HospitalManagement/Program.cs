@@ -99,7 +99,7 @@ namespace HospitalManagement
                     // създаване на заболяване
                     var medicalCondition = new MedicalCondition()
                     {
-                        Name = "Деменция"
+                        Name = "ДЕМЕНЦИЯ"
                     };
 
                     // запаметяване на добавеното заболяване в променлива
