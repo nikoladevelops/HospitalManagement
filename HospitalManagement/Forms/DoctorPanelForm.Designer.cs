@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.medicalConditionsMenuButton = new System.Windows.Forms.Button();
             this.searchPatientMenuButton = new System.Windows.Forms.Button();
             this.createPatientMenuButton = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -37,8 +38,6 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.createPrescriptionMenuButton = new System.Windows.Forms.Button();
-            this.medicalConditionsMenuButton = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -48,7 +47,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             this.panelMenu.Controls.Add(this.medicalConditionsMenuButton);
-            this.panelMenu.Controls.Add(this.createPrescriptionMenuButton);
             this.panelMenu.Controls.Add(this.searchPatientMenuButton);
             this.panelMenu.Controls.Add(this.createPatientMenuButton);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -57,6 +55,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(225, 569);
             this.panelMenu.TabIndex = 28;
+            // 
+            // medicalConditionsMenuButton
+            // 
+            this.medicalConditionsMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.medicalConditionsMenuButton.FlatAppearance.BorderSize = 0;
+            this.medicalConditionsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.medicalConditionsMenuButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.medicalConditionsMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.medicalConditionsMenuButton.Image = global::HospitalManagement.Properties.Resources.medicalCondition;
+            this.medicalConditionsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.medicalConditionsMenuButton.Location = new System.Drawing.Point(0, 200);
+            this.medicalConditionsMenuButton.Name = "medicalConditionsMenuButton";
+            this.medicalConditionsMenuButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.medicalConditionsMenuButton.Size = new System.Drawing.Size(225, 60);
+            this.medicalConditionsMenuButton.TabIndex = 32;
+            this.medicalConditionsMenuButton.Text = "  Заболявания";
+            this.medicalConditionsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.medicalConditionsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.medicalConditionsMenuButton.UseVisualStyleBackColor = true;
+            this.medicalConditionsMenuButton.Click += new System.EventHandler(this.medicalConditionsMenuButton_Click);
             // 
             // searchPatientMenuButton
             // 
@@ -76,6 +94,7 @@
             this.searchPatientMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.searchPatientMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.searchPatientMenuButton.UseVisualStyleBackColor = true;
+            this.searchPatientMenuButton.Click += new System.EventHandler(this.searchPatientMenuButton_Click);
             // 
             // createPatientMenuButton
             // 
@@ -84,7 +103,7 @@
             this.createPatientMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createPatientMenuButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createPatientMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.createPatientMenuButton.Image = global::HospitalManagement.Properties.Resources.doctorIcon;
+            this.createPatientMenuButton.Image = global::HospitalManagement.Properties.Resources.patient;
             this.createPatientMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createPatientMenuButton.Location = new System.Drawing.Point(0, 80);
             this.createPatientMenuButton.Name = "createPatientMenuButton";
@@ -95,6 +114,7 @@
             this.createPatientMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createPatientMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.createPatientMenuButton.UseVisualStyleBackColor = true;
+            this.createPatientMenuButton.Click += new System.EventHandler(this.createPatientMenuButton_Click);
             // 
             // panelLogo
             // 
@@ -164,44 +184,6 @@
             this.contentPanel.Size = new System.Drawing.Size(816, 489);
             this.contentPanel.TabIndex = 32;
             // 
-            // createPrescriptionMenuButton
-            // 
-            this.createPrescriptionMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.createPrescriptionMenuButton.FlatAppearance.BorderSize = 0;
-            this.createPrescriptionMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createPrescriptionMenuButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.createPrescriptionMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.createPrescriptionMenuButton.Image = global::HospitalManagement.Properties.Resources.pencilIcon;
-            this.createPrescriptionMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.createPrescriptionMenuButton.Location = new System.Drawing.Point(0, 200);
-            this.createPrescriptionMenuButton.Name = "createPrescriptionMenuButton";
-            this.createPrescriptionMenuButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.createPrescriptionMenuButton.Size = new System.Drawing.Size(225, 60);
-            this.createPrescriptionMenuButton.TabIndex = 31;
-            this.createPrescriptionMenuButton.Text = "  Създай рецепта";
-            this.createPrescriptionMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.createPrescriptionMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.createPrescriptionMenuButton.UseVisualStyleBackColor = true;
-            // 
-            // medicalConditionsMenuButton
-            // 
-            this.medicalConditionsMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.medicalConditionsMenuButton.FlatAppearance.BorderSize = 0;
-            this.medicalConditionsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.medicalConditionsMenuButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.medicalConditionsMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.medicalConditionsMenuButton.Image = global::HospitalManagement.Properties.Resources.pencilIcon;
-            this.medicalConditionsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.medicalConditionsMenuButton.Location = new System.Drawing.Point(0, 260);
-            this.medicalConditionsMenuButton.Name = "medicalConditionsMenuButton";
-            this.medicalConditionsMenuButton.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.medicalConditionsMenuButton.Size = new System.Drawing.Size(225, 60);
-            this.medicalConditionsMenuButton.TabIndex = 32;
-            this.medicalConditionsMenuButton.Text = "  Заболявания";
-            this.medicalConditionsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.medicalConditionsMenuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.medicalConditionsMenuButton.UseVisualStyleBackColor = true;
-            // 
             // DoctorPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -231,7 +213,6 @@
         private Label logoLabel;
         private Label label12;
         private Panel contentPanel;
-        private Button createPrescriptionMenuButton;
         private Button medicalConditionsMenuButton;
     }
 }

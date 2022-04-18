@@ -1,4 +1,4 @@
-﻿using HospitalManagement.Forms.AdminForms;
+﻿using HospitalManagement.Forms.DoctorForms;
 using HospitalManagement.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,27 +53,26 @@ namespace HospitalManagement.Forms
             childForm.Show();
         }
 
-        private void createDoctorMenuButton_Click(object sender, EventArgs e)
+        private void createPatientMenuButton_Click(object sender, EventArgs e)
         {
             createPatientMenuButton.BackColor = activeButtonColor;
             searchPatientMenuButton.BackColor = notActiveButtonColor;
-            createPrescriptionMenuButton.BackColor = notActiveButtonColor;
-
-            //OpenChildForm(new CreateDoctorForm(db));
+            medicalConditionsMenuButton.BackColor = notActiveButtonColor;
+            OpenChildForm(new CreatePatientForm(db));
         }
 
-        private void searchDoctorMenuButton_Click(object sender, EventArgs e)
+        private void searchPatientMenuButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void createSpecialityMenuButton_Click(object sender, EventArgs e)
-        {
-            createPrescriptionMenuButton.BackColor = activeButtonColor;
-            searchPatientMenuButton.BackColor = notActiveButtonColor;
             createPatientMenuButton.BackColor = notActiveButtonColor;
+            searchPatientMenuButton.BackColor = activeButtonColor;
+            medicalConditionsMenuButton.BackColor = notActiveButtonColor;
+        }
 
-            //OpenChildForm(new DoctorSpecialityForm(db));
+        private void medicalConditionsMenuButton_Click(object sender, EventArgs e)
+        {
+            createPatientMenuButton.BackColor = notActiveButtonColor;
+            searchPatientMenuButton.BackColor = notActiveButtonColor;
+            medicalConditionsMenuButton.BackColor = activeButtonColor;
         }
     }
 }
