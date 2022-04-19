@@ -79,7 +79,11 @@ namespace HospitalManagement.Forms.DoctorForms
                 {
                     // дай ми единственото заболяване с такова име
                     var selectedMedicalCondition = db.MedicalConditions.Single(x => x.Name == medicalConditionListBox.SelectedItem.ToString());
-                    
+                    var patientsWithMedicalCondition = db.Patients.Include(x => x.MedicalCondition).Where(x => x.MedicalConditionId == selectedMedicalCondition.Id);
+                    foreach (var patient in patientsWithMedicalCondition)
+                    {
+                        patient.MedicalConditionId = null;
+                    }
                     db.MedicalConditions.Remove(selectedMedicalCondition);
                     await db.SaveChangesAsync();
                     LoadMedicalConditionListBoxData();

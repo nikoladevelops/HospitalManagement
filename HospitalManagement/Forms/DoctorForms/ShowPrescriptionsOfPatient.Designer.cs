@@ -75,6 +75,7 @@
             this.prescriptionTextBox.Multiline = true;
             this.prescriptionTextBox.Name = "prescriptionTextBox";
             this.prescriptionTextBox.ReadOnly = true;
+            this.prescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.prescriptionTextBox.Size = new System.Drawing.Size(192, 224);
             this.prescriptionTextBox.TabIndex = 42;
             // 
