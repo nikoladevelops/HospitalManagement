@@ -15,7 +15,7 @@ namespace HospitalManagement.Forms.AdminForms
     public partial class EditDoctorForm : Form
     {
         private ApplicationDbContext db;
-        private List<Control> createDoctorControls;
+        private List<Control> editDoctorControls;
         private User userInfoToEdit;
         private Doctor doctorInfoToEdit;
         public EditDoctorForm()
@@ -28,7 +28,7 @@ namespace HospitalManagement.Forms.AdminForms
         {
             this.db = db;
             LoadSpecialityListBoxData();
-            PopulateCreateDoctorControls();
+            PopulateEditDoctorControls();
 
             // вземи информацията на доктора за съответния user
             // знаем че ползваме .Single() понеже имаме връзка едно към едно
@@ -64,14 +64,14 @@ namespace HospitalManagement.Forms.AdminForms
             }
         }
 
-        private void PopulateCreateDoctorControls()
+        private void PopulateEditDoctorControls()
         {
-            createDoctorControls = new List<Control>();
-            createDoctorControls.Add(emailTextBox);
-            createDoctorControls.Add(passwordTextBox);
-            createDoctorControls.Add(firstNameTextBox);
-            createDoctorControls.Add(middleNameTextBox);
-            createDoctorControls.Add(lastNameTextBox);
+            editDoctorControls = new List<Control>();
+            editDoctorControls.Add(emailTextBox);
+            editDoctorControls.Add(passwordTextBox);
+            editDoctorControls.Add(firstNameTextBox);
+            editDoctorControls.Add(middleNameTextBox);
+            editDoctorControls.Add(lastNameTextBox);
         }
 
         private async void editDoctorButton_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace HospitalManagement.Forms.AdminForms
                 return false;
             }
 
-            foreach (var control in createDoctorControls)
+            foreach (var control in editDoctorControls)
             {
                 // за всеки един TextBox ако текста само на един даже да не е попълнен
                 if (string.IsNullOrWhiteSpace(control.Text))

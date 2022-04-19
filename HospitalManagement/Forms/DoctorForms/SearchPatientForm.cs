@@ -140,6 +140,7 @@ namespace HospitalManagement.Forms.DoctorForms
         {
             var selectedPatientEGN = foundPatientsListBox.SelectedItem.ToString();
             // .Single() тъй като егн-тата неможе да са еднакви на двама пациента
+            // .Include() зада заредим заболяването на пациента/ ако той има такова ествествено
             return db.Patients.Include(p=>p.MedicalCondition).Single(p => p.EGN == selectedPatientEGN);
         }
         private void showSelectedPatientButton_Click(object sender, EventArgs e)
@@ -160,7 +161,7 @@ namespace HospitalManagement.Forms.DoctorForms
                 return;
             }
             var selectedPatient = GetSelectedPatient();
-            //openChildForm(new EditPatientForm(db, selectedPatient));
+            openChildForm(new EditPatientForm(db, selectedPatient));
         }
 
         private async void deleteSelectedPatientButton_Click(object sender, EventArgs e)
@@ -184,7 +185,11 @@ namespace HospitalManagement.Forms.DoctorForms
 
         private void createSelectedPatientPrescription_Click(object sender, EventArgs e)
         {
-
+            if (!CheckIfPatientSelected())
+            {
+                MessageBox.Show("Трябва да изберете пациент първо.", "Не сте избрали пациент.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
