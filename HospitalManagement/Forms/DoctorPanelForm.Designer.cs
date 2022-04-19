@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorPanelForm));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.medicalConditionsMenuButton = new System.Windows.Forms.Button();
             this.searchPatientMenuButton = new System.Windows.Forms.Button();
@@ -192,6 +193,7 @@
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DoctorPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Докторски панел";
