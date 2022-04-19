@@ -30,6 +30,9 @@
     <Compile Update="Forms\DoctorForms\SearchPatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\DoctorForms\ShowPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\DoctorPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>

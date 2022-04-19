@@ -91,7 +91,7 @@
             this.editSelectedPatientButton.TabIndex = 6;
             this.editSelectedPatientButton.Text = "Редактирай избрания";
             this.editSelectedPatientButton.UseVisualStyleBackColor = false;
-            this.editSelectedPatientButton.Click += new System.EventHandler(this.editSelectedDoctorButton_Click);
+            this.editSelectedPatientButton.Click += new System.EventHandler(this.editSelectedPatientButton_Click);
             // 
             // foundPatientsListBox
             // 
@@ -117,7 +117,7 @@
             this.showSelectedPatientButton.TabIndex = 5;
             this.showSelectedPatientButton.Text = "Покажи избрания";
             this.showSelectedPatientButton.UseVisualStyleBackColor = false;
-            this.showSelectedPatientButton.Click += new System.EventHandler(this.showSelectedDoctorButton_Click);
+            this.showSelectedPatientButton.Click += new System.EventHandler(this.showSelectedPatientButton_Click);
             // 
             // label9
             // 
@@ -144,7 +144,7 @@
             this.deleteSelectedPatientButton.TabIndex = 7;
             this.deleteSelectedPatientButton.Text = "Изтрий избрания";
             this.deleteSelectedPatientButton.UseVisualStyleBackColor = false;
-            this.deleteSelectedPatientButton.Click += new System.EventHandler(this.deleteSelectedDoctorButton_Click);
+            this.deleteSelectedPatientButton.Click += new System.EventHandler(this.deleteSelectedPatientButton_Click);
             // 
             // searchCriteriaListBox
             // 
@@ -170,7 +170,7 @@
             this.searchDoctorButton.TabIndex = 3;
             this.searchDoctorButton.Text = "Намери пациент";
             this.searchDoctorButton.UseVisualStyleBackColor = false;
-            this.searchDoctorButton.Click += new System.EventHandler(this.searchDoctorButton_Click);
+            this.searchDoctorButton.Click += new System.EventHandler(this.searchPatientButton_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -221,6 +221,7 @@
             this.createSelectedPatientPrescription.TabIndex = 35;
             this.createSelectedPatientPrescription.Text = "Създай рецепта";
             this.createSelectedPatientPrescription.UseVisualStyleBackColor = false;
+            this.createSelectedPatientPrescription.Click += new System.EventHandler(this.createSelectedPatientPrescription_Click);
             // 
             // SearchPatientForm
             // 

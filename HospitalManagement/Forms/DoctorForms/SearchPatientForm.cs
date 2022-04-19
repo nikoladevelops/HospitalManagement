@@ -98,7 +98,7 @@ namespace HospitalManagement.Forms.DoctorForms
                             return;
                         }
 
-                        var patients = db.Patients.Include(p=>p.MedicalCondition).Where(p => p.MedicalCondition.Name == searchTerm).ToList();
+                        var patients = db.Patients.Include(p=>p.MedicalCondition).Where(p => p.MedicalCondition.Name == searchTerm.ToUpper()).ToList();
                         foreach (var patient in patients)
                         {
                             foundPatientsList.Add(patient);
@@ -139,9 +139,10 @@ namespace HospitalManagement.Forms.DoctorForms
         private Patient GetSelectedPatient()
         {
             var selectedPatientEGN = foundPatientsListBox.SelectedItem.ToString();
-            return db.Patients.Single(u => u.EGN == selectedPatientEGN);
+            // .Single() тъй като егн-тата неможе да са еднакви на двама пациента
+            return db.Patients.Include(p=>p.MedicalCondition).Single(p => p.EGN == selectedPatientEGN);
         }
-        private void showSelectedDoctorButton_Click(object sender, EventArgs e)
+        private void showSelectedPatientButton_Click(object sender, EventArgs e)
         {
             if (!CheckIfPatientSelected())
             {
@@ -151,7 +152,7 @@ namespace HospitalManagement.Forms.DoctorForms
             var selectedPatient = GetSelectedPatient();
             openChildForm(new ShowPatientForm(db, selectedPatient));
         }
-        private void editSelectedDoctorButton_Click(object sender, EventArgs e)
+        private void editSelectedPatientButton_Click(object sender, EventArgs e)
         {
             if (!CheckIfPatientSelected())
             {
@@ -159,10 +160,10 @@ namespace HospitalManagement.Forms.DoctorForms
                 return;
             }
             var selectedPatient = GetSelectedPatient();
-            openChildForm(new EditPatientForm(db, selectedPatient));
+            //openChildForm(new EditPatientForm(db, selectedPatient));
         }
 
-        private async void deleteSelectedDoctorButton_Click(object sender, EventArgs e)
+        private async void deleteSelectedPatientButton_Click(object sender, EventArgs e)
         {
             if (!CheckIfPatientSelected())
             {
@@ -170,15 +171,20 @@ namespace HospitalManagement.Forms.DoctorForms
                 return;
             }
             var selectedPatient = GetSelectedPatient();
-            var result = MessageBox.Show("Вмомента сте на път да изтриете пациента " +selectedUser.Email + ". Това ще изтрие и всичките негови рецепти. Искате ли да изтриете този пациент?", "Сигурни ли сте че искате да изтриете този пациент?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var result = MessageBox.Show("Вмомента сте на път да изтриете пациента с ЕГН " + selectedPatient.EGN + ". Това ще изтрие и всичките му рецепти. Искате ли да изтриете този пациент?", "Сигурни ли сте че искате да изтриете този пациент?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
-                var userToDelete = db.Users.Single(u => u.Id == selectedUser.Id);
-                db.Users.Remove(userToDelete);
+                var patientToDelete = db.Patients.Single(p => p.EGN == selectedPatient.EGN);
+                db.Patients.Remove(patientToDelete);
                 await db.SaveChangesAsync();
-                foundPatientsListBox.Items.Remove(selectedUser.Email);
+                foundPatientsListBox.Items.Remove(patientToDelete.EGN);
             }
+        }
+
+        private void createSelectedPatientPrescription_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
