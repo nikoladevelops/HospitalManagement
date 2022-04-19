@@ -41,6 +41,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.createSelectedPatientPrescription = new System.Windows.Forms.Button();
+            this.showSelectedPatientPrescriptionsButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,9 +86,9 @@
             this.editSelectedPatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editSelectedPatientButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.editSelectedPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
-            this.editSelectedPatientButton.Location = new System.Drawing.Point(379, 343);
+            this.editSelectedPatientButton.Location = new System.Drawing.Point(379, 334);
             this.editSelectedPatientButton.Name = "editSelectedPatientButton";
-            this.editSelectedPatientButton.Size = new System.Drawing.Size(195, 34);
+            this.editSelectedPatientButton.Size = new System.Drawing.Size(195, 32);
             this.editSelectedPatientButton.TabIndex = 6;
             this.editSelectedPatientButton.Text = "Редактирай избрания";
             this.editSelectedPatientButton.UseVisualStyleBackColor = false;
@@ -111,7 +112,7 @@
             this.showSelectedPatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showSelectedPatientButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.showSelectedPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.showSelectedPatientButton.Location = new System.Drawing.Point(379, 265);
+            this.showSelectedPatientButton.Location = new System.Drawing.Point(379, 266);
             this.showSelectedPatientButton.Name = "showSelectedPatientButton";
             this.showSelectedPatientButton.Size = new System.Drawing.Size(195, 32);
             this.showSelectedPatientButton.TabIndex = 5;
@@ -138,9 +139,9 @@
             this.deleteSelectedPatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteSelectedPatientButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deleteSelectedPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.deleteSelectedPatientButton.Location = new System.Drawing.Point(379, 303);
+            this.deleteSelectedPatientButton.Location = new System.Drawing.Point(379, 300);
             this.deleteSelectedPatientButton.Name = "deleteSelectedPatientButton";
-            this.deleteSelectedPatientButton.Size = new System.Drawing.Size(195, 34);
+            this.deleteSelectedPatientButton.Size = new System.Drawing.Size(195, 32);
             this.deleteSelectedPatientButton.TabIndex = 7;
             this.deleteSelectedPatientButton.Text = "Изтрий избрания";
             this.deleteSelectedPatientButton.UseVisualStyleBackColor = false;
@@ -191,6 +192,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.showSelectedPatientPrescriptionsButton);
             this.panel1.Controls.Add(this.createSelectedPatientPrescription);
             this.panel1.Controls.Add(this.searchTextBox);
             this.panel1.Controls.Add(this.label10);
@@ -215,13 +217,28 @@
             this.createSelectedPatientPrescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createSelectedPatientPrescription.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.createSelectedPatientPrescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.createSelectedPatientPrescription.Location = new System.Drawing.Point(379, 382);
+            this.createSelectedPatientPrescription.Location = new System.Drawing.Point(379, 368);
             this.createSelectedPatientPrescription.Name = "createSelectedPatientPrescription";
-            this.createSelectedPatientPrescription.Size = new System.Drawing.Size(195, 46);
+            this.createSelectedPatientPrescription.Size = new System.Drawing.Size(195, 32);
             this.createSelectedPatientPrescription.TabIndex = 35;
             this.createSelectedPatientPrescription.Text = "Създай рецепта";
             this.createSelectedPatientPrescription.UseVisualStyleBackColor = false;
             this.createSelectedPatientPrescription.Click += new System.EventHandler(this.createSelectedPatientPrescription_Click);
+            // 
+            // showSelectedPatientPrescriptionsButton
+            // 
+            this.showSelectedPatientPrescriptionsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showSelectedPatientPrescriptionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
+            this.showSelectedPatientPrescriptionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showSelectedPatientPrescriptionsButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.showSelectedPatientPrescriptionsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.showSelectedPatientPrescriptionsButton.Location = new System.Drawing.Point(379, 403);
+            this.showSelectedPatientPrescriptionsButton.Name = "showSelectedPatientPrescriptionsButton";
+            this.showSelectedPatientPrescriptionsButton.Size = new System.Drawing.Size(195, 32);
+            this.showSelectedPatientPrescriptionsButton.TabIndex = 36;
+            this.showSelectedPatientPrescriptionsButton.Text = "Виж всички рецепти";
+            this.showSelectedPatientPrescriptionsButton.UseVisualStyleBackColor = false;
+            this.showSelectedPatientPrescriptionsButton.Click += new System.EventHandler(this.showSelectedPatientPrescriptionsButton_Click);
             // 
             // SearchPatientForm
             // 
@@ -253,5 +270,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Button createSelectedPatientPrescription;
+        private Button showSelectedPatientPrescriptionsButton;
     }
 }

@@ -195,5 +195,16 @@ namespace HospitalManagement.Forms.DoctorForms
             var selectedPatient = GetSelectedPatient();
             openChildForm(new CreatePrescriptionForm(db, currentLoggedInDoctorId, selectedPatient));
         }
+
+        private void showSelectedPatientPrescriptionsButton_Click(object sender, EventArgs e)
+        {
+            if (!CheckIfPatientSelected())
+            {
+                MessageBox.Show("Трябва да изберете пациент първо.", "Не сте избрали пациент.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var selectedPatient = GetSelectedPatient();
+            openChildForm(new ShowPrescriptionsOfPatient(db, selectedPatient));
+        }
     }
 }
