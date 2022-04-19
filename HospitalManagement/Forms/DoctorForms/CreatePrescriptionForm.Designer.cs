@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagement.Forms.DoctorForms
 {
-    partial class CreatePatientForm
+    partial class CreatePrescriptionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,9 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.medicalConditionListBox = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.createPatientButton = new System.Windows.Forms.Button();
+            this.createPrescriptionButton = new System.Windows.Forms.Button();
             this.egnTextBox = new System.Windows.Forms.TextBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.prescriptionTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -207,10 +207,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.prescriptionTextBox);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.medicalConditionListBox);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.createPatientButton);
+            this.panel1.Controls.Add(this.createPrescriptionButton);
             this.panel1.Controls.Add(this.egnTextBox);
             this.panel1.Controls.Add(this.lastNameTextBox);
             this.panel1.Controls.Add(this.middleNameTextBox);
@@ -232,22 +232,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.label7.Location = new System.Drawing.Point(379, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 25);
+            this.label7.Size = new System.Drawing.Size(83, 25);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Избери заболяване";
-            // 
-            // medicalConditionListBox
-            // 
-            this.medicalConditionListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.medicalConditionListBox.BackColor = System.Drawing.SystemColors.Window;
-            this.medicalConditionListBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.medicalConditionListBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.medicalConditionListBox.FormattingEnabled = true;
-            this.medicalConditionListBox.ItemHeight = 20;
-            this.medicalConditionListBox.Location = new System.Drawing.Point(379, 77);
-            this.medicalConditionListBox.Name = "medicalConditionListBox";
-            this.medicalConditionListBox.Size = new System.Drawing.Size(193, 224);
-            this.medicalConditionListBox.TabIndex = 6;
+            this.label7.Text = "Рецепта";
             // 
             // label9
             // 
@@ -261,20 +248,20 @@
             this.label9.TabIndex = 37;
             this.label9.Text = "ЕГН";
             // 
-            // createPatientButton
+            // createPrescriptionButton
             // 
-            this.createPatientButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.createPatientButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
-            this.createPatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createPatientButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.createPatientButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.createPatientButton.Location = new System.Drawing.Point(176, 299);
-            this.createPatientButton.Name = "createPatientButton";
-            this.createPatientButton.Size = new System.Drawing.Size(197, 49);
-            this.createPatientButton.TabIndex = 7;
-            this.createPatientButton.Text = "Създай пациент";
-            this.createPatientButton.UseVisualStyleBackColor = false;
-            this.createPatientButton.Click += new System.EventHandler(this.createPatientButton_Click);
+            this.createPrescriptionButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.createPrescriptionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(42)))), ((int)(((byte)(86)))));
+            this.createPrescriptionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createPrescriptionButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.createPrescriptionButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.createPrescriptionButton.Location = new System.Drawing.Point(274, 295);
+            this.createPrescriptionButton.Name = "createPrescriptionButton";
+            this.createPrescriptionButton.Size = new System.Drawing.Size(197, 49);
+            this.createPrescriptionButton.TabIndex = 7;
+            this.createPrescriptionButton.Text = "Създай рецепта";
+            this.createPrescriptionButton.UseVisualStyleBackColor = false;
+            this.createPrescriptionButton.Click += new System.EventHandler(this.createPrescriptionButton_Click);
             // 
             // egnTextBox
             // 
@@ -282,6 +269,7 @@
             this.egnTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.egnTextBox.Location = new System.Drawing.Point(176, 258);
             this.egnTextBox.Name = "egnTextBox";
+            this.egnTextBox.ReadOnly = true;
             this.egnTextBox.Size = new System.Drawing.Size(197, 27);
             this.egnTextBox.TabIndex = 2;
             // 
@@ -291,6 +279,7 @@
             this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lastNameTextBox.Location = new System.Drawing.Point(176, 199);
             this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.ReadOnly = true;
             this.lastNameTextBox.Size = new System.Drawing.Size(197, 27);
             this.lastNameTextBox.TabIndex = 5;
             // 
@@ -300,6 +289,7 @@
             this.middleNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.middleNameTextBox.Location = new System.Drawing.Point(176, 141);
             this.middleNameTextBox.Name = "middleNameTextBox";
+            this.middleNameTextBox.ReadOnly = true;
             this.middleNameTextBox.Size = new System.Drawing.Size(197, 27);
             this.middleNameTextBox.TabIndex = 4;
             // 
@@ -321,6 +311,7 @@
             this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.firstNameTextBox.Location = new System.Drawing.Point(176, 77);
             this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.ReadOnly = true;
             this.firstNameTextBox.Size = new System.Drawing.Size(197, 27);
             this.firstNameTextBox.TabIndex = 3;
             // 
@@ -366,14 +357,24 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel7.TabIndex = 33;
             // 
-            // CreateDoctorForm
+            // prescriptionTextBox
+            // 
+            this.prescriptionTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.prescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prescriptionTextBox.Location = new System.Drawing.Point(379, 77);
+            this.prescriptionTextBox.Multiline = true;
+            this.prescriptionTextBox.Name = "prescriptionTextBox";
+            this.prescriptionTextBox.Size = new System.Drawing.Size(197, 208);
+            this.prescriptionTextBox.TabIndex = 38;
+            // 
+            // CreatePrescriptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel7);
-            this.Name = "CreateDoctorForm";
-            this.Text = "Създай пациент";
+            this.Name = "CreatePrescriptionForm";
+            this.Text = "Създай рецепта";
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -404,9 +405,8 @@
         private Label label3;
         private Panel panel1;
         private Label label7;
-        private ListBox medicalConditionListBox;
         private Label label9;
-        private Button createPatientButton;
+        private Button createPrescriptionButton;
         private TextBox egnTextBox;
         private TextBox lastNameTextBox;
         private TextBox middleNameTextBox;
@@ -415,5 +415,6 @@
         private Label label11;
         private Label label12;
         private TableLayoutPanel tableLayoutPanel7;
+        private TextBox prescriptionTextBox;
     }
 }

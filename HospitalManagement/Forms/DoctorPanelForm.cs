@@ -10,16 +10,18 @@ namespace HospitalManagement.Forms
         private Color activeButtonColor;
         private Color notActiveButtonColor;
         private Form activeForm;
+        private int currentLoggedInDoctorId;
         public DoctorPanelForm()
         {
             InitializeComponent();
         }
+        //user задължително трябва да е с роля доктор, иначе ще има грешка
         public DoctorPanelForm(User user):this()
         {
             this.db = new ApplicationDbContext();
             activeButtonColor = Color.FromArgb(0, 151, 230);
             notActiveButtonColor = Color.FromArgb(0, 168, 255);
-
+            currentLoggedInDoctorId = db.Doctors.Single(d => d.UserId == user.Id).Id;
             // това е default-ната форма която е отворена в началото
             MakeFormActive(new HomeForm(user.Email, user.Role.Name));
         }
@@ -67,7 +69,7 @@ namespace HospitalManagement.Forms
             searchPatientMenuButton.BackColor = activeButtonColor;
             medicalConditionsMenuButton.BackColor = notActiveButtonColor;
             var openChildFormMethod = (Form form) => OpenChildForm(form);
-            OpenChildForm(new SearchPatientForm(db, openChildFormMethod));
+            OpenChildForm(new SearchPatientForm(db, openChildFormMethod, currentLoggedInDoctorId));
         }
 
         private void medicalConditionsMenuButton_Click(object sender, EventArgs e)

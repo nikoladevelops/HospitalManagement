@@ -16,14 +16,16 @@ namespace HospitalManagement.Forms.DoctorForms
     {
         private ApplicationDbContext db;
         private Action<Form> openChildForm;
+        private int currentLoggedInDoctorId;
         public SearchPatientForm()
         {
             InitializeComponent();
         }
-        public SearchPatientForm(ApplicationDbContext db, Action<Form> openChildForm) : this()
+        public SearchPatientForm(ApplicationDbContext db, Action<Form> openChildForm, int currentLoggedInDoctorId) : this()
         {
             this.db = db;
             this.openChildForm = openChildForm;
+            this.currentLoggedInDoctorId = currentLoggedInDoctorId;
             PopulateSearchCriteriaListBox();
         }
         private void PopulateSearchCriteriaListBox()
@@ -190,6 +192,8 @@ namespace HospitalManagement.Forms.DoctorForms
                 MessageBox.Show("Трябва да изберете пациент първо.", "Не сте избрали пациент.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            var selectedPatient = GetSelectedPatient();
+            openChildForm(new CreatePrescriptionForm(db, currentLoggedInDoctorId, selectedPatient));
         }
     }
 }
