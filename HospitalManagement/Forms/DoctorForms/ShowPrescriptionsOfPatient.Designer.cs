@@ -77,7 +77,7 @@
             this.prescriptionTextBox.ReadOnly = true;
             this.prescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.prescriptionTextBox.Size = new System.Drawing.Size(192, 224);
-            this.prescriptionTextBox.TabIndex = 42;
+            this.prescriptionTextBox.TabIndex = 3;
             // 
             // allPatientPrescriptionsListBox
             // 
@@ -90,7 +90,7 @@
             this.allPatientPrescriptionsListBox.Location = new System.Drawing.Point(246, 132);
             this.allPatientPrescriptionsListBox.Name = "allPatientPrescriptionsListBox";
             this.allPatientPrescriptionsListBox.Size = new System.Drawing.Size(117, 224);
-            this.allPatientPrescriptionsListBox.TabIndex = 40;
+            this.allPatientPrescriptionsListBox.TabIndex = 2;
             // 
             // label7
             // 
@@ -124,7 +124,7 @@
             this.egnTextBox.Name = "egnTextBox";
             this.egnTextBox.ReadOnly = true;
             this.egnTextBox.Size = new System.Drawing.Size(187, 27);
-            this.egnTextBox.TabIndex = 2;
+            this.egnTextBox.TabIndex = 1;
             this.egnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel7

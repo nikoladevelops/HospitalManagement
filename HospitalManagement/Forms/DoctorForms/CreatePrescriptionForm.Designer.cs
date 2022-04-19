@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.prescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.createPrescriptionButton = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.prescriptionTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -224,6 +224,16 @@
             this.panel1.Size = new System.Drawing.Size(770, 444);
             this.panel1.TabIndex = 33;
             // 
+            // prescriptionTextBox
+            // 
+            this.prescriptionTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.prescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prescriptionTextBox.Location = new System.Drawing.Point(379, 77);
+            this.prescriptionTextBox.Multiline = true;
+            this.prescriptionTextBox.Name = "prescriptionTextBox";
+            this.prescriptionTextBox.Size = new System.Drawing.Size(197, 208);
+            this.prescriptionTextBox.TabIndex = 5;
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -258,7 +268,7 @@
             this.createPrescriptionButton.Location = new System.Drawing.Point(274, 295);
             this.createPrescriptionButton.Name = "createPrescriptionButton";
             this.createPrescriptionButton.Size = new System.Drawing.Size(197, 49);
-            this.createPrescriptionButton.TabIndex = 7;
+            this.createPrescriptionButton.TabIndex = 6;
             this.createPrescriptionButton.Text = "Създай рецепта";
             this.createPrescriptionButton.UseVisualStyleBackColor = false;
             this.createPrescriptionButton.Click += new System.EventHandler(this.createPrescriptionButton_Click);
@@ -271,7 +281,7 @@
             this.egnTextBox.Name = "egnTextBox";
             this.egnTextBox.ReadOnly = true;
             this.egnTextBox.Size = new System.Drawing.Size(197, 27);
-            this.egnTextBox.TabIndex = 2;
+            this.egnTextBox.TabIndex = 4;
             // 
             // lastNameTextBox
             // 
@@ -281,7 +291,7 @@
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.ReadOnly = true;
             this.lastNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.lastNameTextBox.TabIndex = 5;
+            this.lastNameTextBox.TabIndex = 3;
             // 
             // middleNameTextBox
             // 
@@ -291,7 +301,7 @@
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.ReadOnly = true;
             this.middleNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.middleNameTextBox.TabIndex = 4;
+            this.middleNameTextBox.TabIndex = 2;
             // 
             // label10
             // 
@@ -313,7 +323,7 @@
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.ReadOnly = true;
             this.firstNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.firstNameTextBox.TabIndex = 3;
+            this.firstNameTextBox.TabIndex = 1;
             // 
             // label11
             // 
@@ -356,16 +366,6 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel7.TabIndex = 33;
-            // 
-            // prescriptionTextBox
-            // 
-            this.prescriptionTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.prescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.prescriptionTextBox.Location = new System.Drawing.Point(379, 77);
-            this.prescriptionTextBox.Multiline = true;
-            this.prescriptionTextBox.Name = "prescriptionTextBox";
-            this.prescriptionTextBox.Size = new System.Drawing.Size(197, 208);
-            this.prescriptionTextBox.TabIndex = 38;
             // 
             // CreatePrescriptionForm
             // 

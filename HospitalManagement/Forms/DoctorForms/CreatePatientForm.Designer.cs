@@ -158,7 +158,7 @@
             this.medicalConditionListBox.Location = new System.Drawing.Point(379, 77);
             this.medicalConditionListBox.Name = "medicalConditionListBox";
             this.medicalConditionListBox.Size = new System.Drawing.Size(193, 224);
-            this.medicalConditionListBox.TabIndex = 6;
+            this.medicalConditionListBox.TabIndex = 5;
             // 
             // label9
             // 
@@ -182,7 +182,7 @@
             this.createPatientButton.Location = new System.Drawing.Point(176, 299);
             this.createPatientButton.Name = "createPatientButton";
             this.createPatientButton.Size = new System.Drawing.Size(197, 49);
-            this.createPatientButton.TabIndex = 7;
+            this.createPatientButton.TabIndex = 6;
             this.createPatientButton.Text = "Създай пациент";
             this.createPatientButton.UseVisualStyleBackColor = false;
             this.createPatientButton.Click += new System.EventHandler(this.createPatientButton_Click);
@@ -194,7 +194,7 @@
             this.egnTextBox.Location = new System.Drawing.Point(176, 258);
             this.egnTextBox.Name = "egnTextBox";
             this.egnTextBox.Size = new System.Drawing.Size(197, 27);
-            this.egnTextBox.TabIndex = 2;
+            this.egnTextBox.TabIndex = 4;
             // 
             // lastNameTextBox
             // 
@@ -203,7 +203,7 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(176, 199);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.lastNameTextBox.TabIndex = 5;
+            this.lastNameTextBox.TabIndex = 3;
             // 
             // middleNameTextBox
             // 
@@ -212,7 +212,7 @@
             this.middleNameTextBox.Location = new System.Drawing.Point(176, 141);
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.middleNameTextBox.TabIndex = 4;
+            this.middleNameTextBox.TabIndex = 2;
             // 
             // label10
             // 
@@ -233,7 +233,7 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(176, 77);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.firstNameTextBox.TabIndex = 3;
+            this.firstNameTextBox.TabIndex = 1;
             // 
             // label11
             // 
@@ -277,13 +277,13 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel7.TabIndex = 33;
             // 
-            // CreateDoctorForm
+            // CreatePatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel7);
-            this.Name = "CreateDoctorForm";
+            this.Name = "CreatePatientForm";
             this.Text = "Създай пациент";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -88,7 +88,7 @@
             this.egnTextBox.Location = new System.Drawing.Point(184, 258);
             this.egnTextBox.Name = "egnTextBox";
             this.egnTextBox.Size = new System.Drawing.Size(197, 27);
-            this.egnTextBox.TabIndex = 49;
+            this.egnTextBox.TabIndex = 4;
             // 
             // label1
             // 
@@ -109,7 +109,7 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(184, 200);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.lastNameTextBox.TabIndex = 45;
+            this.lastNameTextBox.TabIndex = 3;
             // 
             // middleNameTextBox
             // 
@@ -118,7 +118,7 @@
             this.middleNameTextBox.Location = new System.Drawing.Point(184, 142);
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.middleNameTextBox.TabIndex = 44;
+            this.middleNameTextBox.TabIndex = 2;
             // 
             // label10
             // 
@@ -139,7 +139,7 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(184, 78);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(197, 27);
-            this.firstNameTextBox.TabIndex = 43;
+            this.firstNameTextBox.TabIndex = 1;
             // 
             // label11
             // 
@@ -188,7 +188,7 @@
             this.medicalConditionListBox.Location = new System.Drawing.Point(387, 78);
             this.medicalConditionListBox.Name = "medicalConditionListBox";
             this.medicalConditionListBox.Size = new System.Drawing.Size(193, 224);
-            this.medicalConditionListBox.TabIndex = 38;
+            this.medicalConditionListBox.TabIndex = 5;
             // 
             // editPatientButton
             // 
@@ -200,7 +200,7 @@
             this.editPatientButton.Location = new System.Drawing.Point(184, 301);
             this.editPatientButton.Name = "editPatientButton";
             this.editPatientButton.Size = new System.Drawing.Size(197, 65);
-            this.editPatientButton.TabIndex = 39;
+            this.editPatientButton.TabIndex = 6;
             this.editPatientButton.Text = "Редактирай пациента";
             this.editPatientButton.UseVisualStyleBackColor = false;
             this.editPatientButton.Click += new System.EventHandler(this.editPatientButton_Click);
